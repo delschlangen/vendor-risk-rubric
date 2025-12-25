@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Risk Assessment Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Vendor Risk Assessment Calculator</h1>
+            <p class="subtitle">Score vendors across 6 risk dimensions to determine review requirements and contract protections</p>
+            <a href="https://github.com/delschlangen/vendor-risk-rubric" class="github-link" target="_blank" rel="noopener">
+                <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                View on GitHub
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Risk Tier Display -->
+        <section class="tier-display" id="tierDisplay">
+            <div class="tier-badge" id="tierBadge">
+                <span class="tier-label">Risk Tier</span>
+                <span class="tier-name" id="tierName">Standard</span>
+            </div>
+            <div class="score-display">
+                <span class="score-value" id="totalScore">0</span>
+                <span class="score-label">/ 18</span>
+            </div>
+        </section>
+
+        <!-- Escalation Warnings -->
+        <section class="escalation-warnings" id="escalationWarnings" style="display: none;">
+            <div class="warning-header">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                </svg>
+                <span>Automatic Escalation Triggers</span>
+            </div>
+            <ul id="escalationList"></ul>
+        </section>
+
+        <!-- Risk Dimensions -->
+        <section class="dimensions">
+            <h2>Risk Dimensions</h2>
+
+            <div class="dimension-card" data-dimension="coEmployment">
+                <div class="dimension-header">
+                    <h3>1. Co-Employment Risk</h3>
+                    <span class="dimension-score" id="coEmploymentScore">0</span>
+                </div>
+                <p class="dimension-desc">Risk that vendor workers could be legally classified as employees</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="coEmployment">
+                    <div class="slider-labels">
+                        <span>0</span><span>1</span><span>2</span><span>3</span>
+                    </div>
+                </div>
+                <div class="score-descriptions">
+                    <div class="score-desc" data-score="0"><strong>0:</strong> No vendor personnel on-site; purely transactional (SaaS, product)</div>
+                    <div class="score-desc" data-score="1"><strong>1:</strong> Occasional on-site; vendor-supervised; clear deliverables</div>
+                    <div class="score-desc" data-score="2"><strong>2:</strong> Regular on-site; some team integration; shared tools</div>
+                    <div class="score-desc" data-score="3"><strong>3:</strong> Embedded daily; company directs work; uses company email/badge</div>
+                </div>
+            </div>
+
+            <div class="dimension-card" data-dimension="dataSensitivity">
+                <div class="dimension-header">
+                    <h3>2. Data Sensitivity & Privacy</h3>
+                    <span class="dimension-score" id="dataSensitivityScore">0</span>
+                </div>
+                <p class="dimension-desc">Risk related to vendor access to sensitive, regulated, or proprietary data</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="dataSensitivity">
+                    <div class="slider-labels">
+                        <span>0</span><span>1</span><span>2</span><span>3</span>
+                    </div>
+                </div>
+                <div class="score-descriptions">
+                    <div class="score-desc" data-score="0"><strong>0:</strong> No access to company data</div>
+                    <div class="score-desc" data-score="1"><strong>1:</strong> Internal business data (non-sensitive); no PII</div>
+                    <div class="score-desc" data-score="2"><strong>2:</strong> PII, customer data, or contractually confidential data</div>
+                    <div class="score-desc" data-score="3"><strong>3:</strong> Regulated data (HIPAA, GDPR, financial), trade secrets, source code</div>
+                </div>
+            </div>
+
+            <div class="dimension-card" data-dimension="physicalSafety">
+                <div class="dimension-header">
+                    <h3>3. Physical Safety & Injury Exposure</h3>
+                    <span class="dimension-score" id="physicalSafetyScore">0</span>
+                </div>
+                <p class="dimension-desc">Risk of physical harm arising from vendor activities</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="physicalSafety">
+                    <div class="slider-labels">
+                        <span>0</span><span>1</span><span>2</span><span>3</span>
+                    </div>
+                </div>
+                <div class="score-descriptions">
+                    <div class="score-desc" data-score="0"><strong>0:</strong> Remote/virtual only; no physical presence</div>
+                    <div class="score-desc" data-score="1"><strong>1:</strong> On-site in office environment; standard hazards</div>
+                    <div class="score-desc" data-score="2"><strong>2:</strong> Equipment, vehicles, or moderate physical risk</div>
+                    <div class="score-desc" data-score="3"><strong>3:</strong> High-risk: construction, electrical, heights, confined spaces</div>
+                </div>
+            </div>
+
+            <div class="dimension-card" data-dimension="siteAccess">
+                <div class="dimension-header">
+                    <h3>4. Site & Security Access</h3>
+                    <span class="dimension-score" id="siteAccessScore">0</span>
+                </div>
+                <p class="dimension-desc">Risk from vendor access to physical facilities or IT systems</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="siteAccess">
+                    <div class="slider-labels">
+                        <span>0</span><span>1</span><span>2</span><span>3</span>
+                    </div>
+                </div>
+                <div class="score-descriptions">
+                    <div class="score-desc" data-score="0"><strong>0:</strong> No facility or system access</div>
+                    <div class="score-desc" data-score="1"><strong>1:</strong> Escorted facility access; read-only or no IT access</div>
+                    <div class="score-desc" data-score="2"><strong>2:</strong> Unescorted access; badge issued; non-production IT</div>
+                    <div class="score-desc" data-score="3"><strong>3:</strong> Data center, secure areas, or production admin access</div>
+                </div>
+            </div>
+
+            <div class="dimension-card" data-dimension="businessContinuity">
+                <div class="dimension-header">
+                    <h3>5. Business Continuity Impact</h3>
+                    <span class="dimension-score" id="businessContinuityScore">0</span>
+                </div>
+                <p class="dimension-desc">Risk that vendor failure would disrupt critical operations</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="businessContinuity">
+                    <div class="slider-labels">
+                        <span>0</span><span>1</span><span>2</span><span>3</span>
+                    </div>
+                </div>
+                <div class="score-descriptions">
+                    <div class="score-desc" data-score="0"><strong>0:</strong> Easily replaceable; commoditized; no dependency</div>
+                    <div class="score-desc" data-score="1"><strong>1:</strong> Minor inconvenience; 2+ alternatives available</div>
+                    <div class="score-desc" data-score="2"><strong>2:</strong> Moderate switching cost; 30-90 day transition</div>
+                    <div class="score-desc" data-score="3"><strong>3:</strong> Single point of failure; >90 day transition; critical to revenue</div>
+                </div>
+            </div>
+
+            <div class="dimension-card" data-dimension="aiMlRisk">
+                <div class="dimension-header">
+                    <h3>6. AI/ML Model Risk</h3>
+                    <span class="dimension-score" id="aiMlRiskScore">0</span>
+                </div>
+                <p class="dimension-desc">Risk from vendor use of AI/ML in delivered services</p>
+                <div class="slider-container">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="aiMlRisk">
+                    <div class="slider-labels">
+                        <span>0</span><span>1</span><span>2</span><span>3</span>
+                    </div>
+                </div>
+                <div class="score-descriptions">
+                    <div class="score-desc" data-score="0"><strong>0:</strong> No AI/ML components</div>
+                    <div class="score-desc" data-score="1"><strong>1:</strong> Embedded AI; no customization; no training on your data</div>
+                    <div class="score-desc" data-score="2"><strong>2:</strong> Custom/fine-tuned models; influences decisions</div>
+                    <div class="score-desc" data-score="3"><strong>3:</strong> Trained on your data; affects customers/employees; IP concerns</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required Reviews -->
+        <section class="results-section">
+            <h2>Required Reviews</h2>
+            <div class="reviews-grid" id="reviewsGrid">
+                <div class="review-item" data-review="procurement">
+                    <span class="review-icon">&#10003;</span>
+                    <span class="review-name">Procurement</span>
+                </div>
+                <div class="review-item inactive" data-review="security">
+                    <span class="review-icon">&#10003;</span>
+                    <span class="review-name">Security Assessment</span>
+                </div>
+                <div class="review-item inactive" data-review="legal">
+                    <span class="review-icon">&#10003;</span>
+                    <span class="review-name">Legal Review</span>
+                </div>
+                <div class="review-item inactive" data-review="privacy">
+                    <span class="review-icon">&#10003;</span>
+                    <span class="review-name">Privacy/DPO</span>
+                </div>
+                <div class="review-item inactive" data-review="executive">
+                    <span class="review-icon">&#10003;</span>
+                    <span class="review-name">Executive Sponsor</span>
+                </div>
+                <div class="review-item inactive" data-review="csuite">
+                    <span class="review-icon">&#10003;</span>
+                    <span class="review-name">C-Suite Approval</span>
+                </div>
+            </div>
+
+            <!-- Triggered Reviews -->
+            <div class="triggered-reviews" id="triggeredReviews" style="display: none;">
+                <h3>Specialist Reviews Triggered</h3>
+                <div id="triggeredReviewsList"></div>
+            </div>
+        </section>
+
+        <!-- Contract Clauses -->
+        <section class="results-section">
+            <h2>Required Contract Clauses</h2>
+            <div class="clauses-container">
+                <div class="clause-group" id="standardClauses">
+                    <h3>Standard Terms <span class="clause-badge">All Vendors</span></h3>
+                    <ul>
+                        <li>Confidentiality</li>
+                        <li>Data Return/Destruction</li>
+                        <li>Insurance Requirements</li>
+                        <li>Compliance with Laws</li>
+                        <li>Basic Indemnification</li>
+                    </ul>
+                </div>
+
+                <div class="clause-group inactive" id="enhancedClauses">
+                    <h3>Enhanced Terms <span class="clause-badge">Score 6+</span></h3>
+                    <ul>
+                        <li>Information Security Requirements</li>
+                        <li>Audit Rights</li>
+                        <li>Subcontractor Flow-Down</li>
+                        <li>Background Check Requirements</li>
+                        <li>72-Hour Breach Notification</li>
+                    </ul>
+                </div>
+
+                <div class="clause-group inactive" id="highRiskClauses">
+                    <h3>High-Risk Terms <span class="clause-badge">Score 11+</span></h3>
+                    <ul>
+                        <li>Data Processing Agreement</li>
+                        <li>Business Continuity Plan</li>
+                        <li>Termination for Convenience</li>
+                        <li>Step-In Rights</li>
+                        <li>Source Code Escrow</li>
+                        <li>Financial Covenants</li>
+                    </ul>
+                </div>
+
+                <div class="clause-group inactive" id="aiClauses">
+                    <h3>AI/ML Terms <span class="clause-badge">AI Score 2+</span></h3>
+                    <ul>
+                        <li>Model Documentation</li>
+                        <li>Training Data Restrictions</li>
+                        <li>Output Ownership</li>
+                        <li>Transparency & Explainability</li>
+                        <li>Human Oversight Mechanisms</li>
+                        <li>30-Day Model Update Notification</li>
+                        <li>Bias & Fairness Testing</li>
+                        <li>AI Incident Response</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="results-section timeline-section">
+            <h2>Expected Timeline</h2>
+            <div class="timeline-display" id="timelineDisplay">
+                <span class="timeline-value">1-2 weeks</span>
+            </div>
+        </section>
+
+        <!-- Actions -->
+        <section class="actions">
+            <button class="btn btn-reset" id="resetBtn">Reset All</button>
+            <button class="btn btn-print" onclick="window.print()">Print Assessment</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>Vendor Risk Assessment Framework</strong> &mdash;
+                <a href="https://github.com/delschlangen/vendor-risk-rubric" target="_blank" rel="noopener">View full documentation on GitHub</a>
+            </p>
+            <p class="footer-links">
+                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/risk_rubric.md">Full Rubric</a> &bull;
+                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/clauses/contract_clauses.md">Contract Clauses</a> &bull;
+                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/quick_reference.md">Quick Reference</a> &bull;
+                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/templates/blank_assessment.md">Assessment Template</a>
+            </p>
+            <p class="copyright">MIT License &bull; Built by Del Schlangen</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
