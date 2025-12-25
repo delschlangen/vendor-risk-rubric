@@ -68,6 +68,7 @@ Follow the [adoption guide](docs/adoption_guide.md) — a phased rollout plan wi
 | [Quick Reference](docs/quick_reference.md) | One-page scoring cheat sheet |
 | [Adoption Guide](docs/adoption_guide.md) | How to implement the framework |
 | [RACI Matrix](docs/raci_matrix.md) | Who is responsible for what |
+| [Jurisdiction Guide](docs/jurisdiction_considerations.md) | EU AI Act, GDPR, CCPA, HIPAA, SOX, GLBA |
 | [Executive Summary](docs/executive_summary.md) | Leadership-level overview |
 | [FAQ](docs/faq.md) | Common questions answered |
 
@@ -129,6 +130,7 @@ vendor-risk-rubric/
 │   ├── quick_reference.md      # One-page cheat sheet
 │   ├── adoption_guide.md       # Implementation guide
 │   ├── raci_matrix.md          # Role accountability
+│   ├── jurisdiction_considerations.md  # Regulatory requirements
 │   ├── executive_summary.md    # Leadership overview
 │   └── faq.md                  # Common questions
 ├── README.md
