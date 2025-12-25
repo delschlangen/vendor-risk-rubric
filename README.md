@@ -2,6 +2,10 @@
 
 **A complete, practical framework for assessing third-party vendor risk.**
 
+[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Visit%20Site-blue?style=for-the-badge)](https://delschlangen.github.io/vendor-risk-rubric)
+
+> **[Use the interactive calculator →](https://delschlangen.github.io/vendor-risk-rubric)** — No installation required. Score vendors directly in your browser.
+
 Stop handling vendors inconsistently. This framework provides scoring criteria, decision workflows, contract clauses, and templates you can use today.
 
 ---
@@ -173,6 +177,16 @@ Contributions welcome:
 - Industry-specific adaptations
 - Additional contract clauses
 - Translations
+
+---
+
+## Live Demo
+
+Use the interactive risk calculator directly in your browser:
+
+**https://delschlangen.github.io/vendor-risk-rubric**
+
+No installation or dependencies required. Score vendors, see required reviews, and get contract clause recommendations instantly.
 
 ---
 
