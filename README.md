@@ -1,12 +1,14 @@
 # Vendor Risk Assessment Framework
 
-**A complete, practical framework for assessing third-party vendor risk.**
+[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Calculator-blue?style=for-the-badge)](https://delschlangen.github.io/vendor-risk-rubric)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![GitHub Pages](https://img.shields.io/badge/Docs-GitHub%20Pages-blue?style=flat-square)](https://delschlangen.github.io/vendor-risk-rubric)
 
-[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Visit%20Site-blue?style=for-the-badge)](https://delschlangen.github.io/vendor-risk-rubric)
+**A complete, practical framework for third-party vendor risk management, supplier due diligence, and contract governance.**
+
+Assess vendors across six risk dimensions — co-employment, data sensitivity, physical safety, site access, business continuity, and AI/ML risk — with a scored rubric that determines review pathways and required contract protections. Aligned with NIST CSF, ISO 27001, NIST AI RMF, and regulatory requirements including GDPR, HIPAA, CCPA, SOX, and the EU AI Act.
 
 > **[Use the interactive calculator →](https://delschlangen.github.io/vendor-risk-rubric)** — No installation required. Score vendors directly in your browser.
-
-Stop handling vendors inconsistently. This framework provides scoring criteria, decision workflows, contract clauses, and templates you can use today.
 
 ---
 
@@ -190,10 +192,18 @@ No installation or dependencies required. Score vendors, see required reviews, a
 
 ---
 
-## License
+## License & Citation
 
-MIT License — See [LICENSE](LICENSE)
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+If you use this framework in your work, please cite it:
+
+```
+Del Schlangen. (2024). Vendor Risk Assessment Framework. GitHub. https://github.com/delschlangen/vendor-risk-rubric
+```
+
+See [CITATION.cff](CITATION.cff) for BibTeX and other citation formats.
 
 ---
 
-*Built by Del Schlangen | [LinkedIn](https://linkedin.com/in/del-s-759557175/)*
+*Built by [Del Schlangen](https://linkedin.com/in/del-s-759557175/) • [ORCID](https://orcid.org/0009-0005-5116-9564)*
