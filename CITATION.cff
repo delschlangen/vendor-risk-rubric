@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this framework, please cite it as below."
+type: software
+title: "Vendor Risk Assessment Framework"
+abstract: >-
+  A structured framework for assessing third-party vendor risk across six dimensions:
+  co-employment, data sensitivity, physical safety, site access, business continuity,
+  and AI/ML risk. Includes scoring rubric, decision workflows, contract clause library,
+  and interactive web calculator.
+authors:
+  - family-names: Schlangen
+    given-names: Del
+    orcid: "https://orcid.org/0009-0005-5116-9564"
+repository-code: "https://github.com/delschlangen/vendor-risk-rubric"
+url: "https://delschlangen.github.io/vendor-risk-rubric"
+license: MIT
+keywords:
+  - vendor-risk
+  - third-party-risk
+  - vendor-management
+  - procurement
+  - contract-management
+  - risk-assessment
+  - compliance
+  - grm
+  - governance
+  - ai-governance
+  - gdpr
+  - hipaa
+  - ccpa
+  - eu-ai-act
+  - supply-chain-risk
+version: "1.0.0"
+date-released: "2024-12-25"
