@@ -6,6 +6,8 @@
 **Department:**
 **Assessment Date:**
 **Assessor:**
+**Framework version used:** v1.1.0
+**Scoring method:** [ ] Calculator (export attached) [ ] Manual
 
 ---
 
@@ -18,6 +20,8 @@
 ---
 
 ## Risk Scoring
+
+Tip: score with the [interactive calculator](https://delschlangen.github.io/vendor-risk-rubric/), then Download .md and paste or attach; record justifications below.
 
 ### 1. Co-Employment Risk
 
@@ -155,13 +159,16 @@
 | Review | Owner | Required? | Status | Date |
 |--------|-------|-----------|--------|------|
 | Procurement | | Yes | [ ] Pending / [ ] Complete | |
-| Security Assessment | | | [ ] Pending / [ ] Complete | |
+| Security Assessment | | (Enhanced+, or Site/Security = 3) | [ ] Pending / [ ] Complete | |
 | Legal Review | | | [ ] Pending / [ ] Complete | |
-| Privacy/DPO Review | | | [ ] Pending / [ ] Complete | |
-| EHS Review | | | [ ] Pending / [ ] Complete | |
-| Finance Review | | | [ ] Pending / [ ] Complete | |
-| AI Governance | | | [ ] Pending / [ ] Complete | |
-| Executive Sponsor | | | [ ] Pending / [ ] Complete | |
+| Employment Counsel | | (Co-Employment = 3) | [ ] Pending / [ ] Complete | |
+| Privacy/DPO Review | | (Data ≥ 2 in Enhanced+, or Data = 3) | [ ] Pending / [ ] Complete | |
+| EHS Review | | (Physical Safety = 3) | [ ] Pending / [ ] Complete | |
+| Finance Review | | (High+, or Business Continuity = 3) | [ ] Pending / [ ] Complete | |
+| Risk/Compliance (BCP review) | | (High+) | [ ] Pending / [ ] Complete | |
+| AI Governance | | (AI/ML ≥ 2 in High+, or AI/ML = 3) | [ ] Pending / [ ] Complete | |
+| Executive Sponsor | | (High+) | [ ] Pending / [ ] Complete | |
+| C-Suite Approval | | (Critical only) | [ ] Pending / [ ] Complete | |
 
 ---
 
@@ -175,16 +182,16 @@
 - [ ] Basic Indemnification
 
 **Enhanced Terms:** (Score 6+ or any dimension = 3)
-- [ ] Information Security Requirements
+- [ ] Security Requirements
 - [ ] Audit Rights
 - [ ] Subcontractor Flow-Down
 - [ ] Background Checks
 - [ ] Breach Notification (72-hour)
 
 **High-Risk Terms:** (Score 11+)
-- [ ] Data Processing Agreement
+- [ ] Data Processing Agreement (also required when Data Sensitivity = 3)
 - [ ] Business Continuity
-- [ ] Termination for Convenience
+- [ ] Termination for Convenience (also required when Business Continuity = 3)
 - [ ] Step-In Rights
 - [ ] Source Code Escrow
 - [ ] Financial Covenants
@@ -195,10 +202,21 @@
 - [ ] Output Ownership
 - [ ] Transparency & Explainability
 - [ ] Human Oversight
-- [ ] Model Update Notification
+- [ ] Model Updates (30-day notice)
 - [ ] Bias Testing
 - [ ] AI Incident Response
 - [ ] Prohibited Uses
+
+**Jurisdiction-Specific Addenda:** (see [jurisdiction_considerations.md](../docs/jurisdiction_considerations.md))
+- [ ] GDPR DPA (Art. 28)
+- [ ] International transfer mechanism (SCCs / TIA)
+- [ ] CCPA/CPRA service-provider terms
+- [ ] HIPAA BAA
+- [ ] SOX controls / SOC 1 Type II
+- [ ] GLBA safeguards
+- [ ] EU AI Act documentation & oversight
+- [ ] DORA Art. 30 ICT contract provisions (EU financial entities)
+- [ ] Other: ___
 
 ---
 
@@ -222,6 +240,9 @@
 | InfoSec | | [ ] Approved / [ ] N/A | |
 | Privacy | | [ ] Approved / [ ] N/A | |
 | Legal | | [ ] Approved / [ ] N/A | |
+| Employment Counsel | | [ ] Approved / [ ] N/A | |
+| EHS | | [ ] Approved / [ ] N/A | |
+| Finance | | [ ] Approved / [ ] N/A | |
 | AI Governance | | [ ] Approved / [ ] N/A | |
 | Executive Sponsor | | [ ] Approved / [ ] N/A | |
 | Procurement | | [ ] Approved | |
@@ -243,6 +264,14 @@
 - [ ] Quarterly business review
 - [ ] Other:
 
+Next re-score / renewal date: ___
+Full re-assessment due (High/Critical, annual): ___
+
 ---
 
 **Assessment completed by:** _________________________ **Date:** _____________
+
+Related documents: [Risk rubric](../rubric/risk_rubric.md) · [Decision tree](../rubric/decision_tree.md) · [Clause library](../clauses/contract_clauses.md) · [Calculator guide](../docs/calculator_guide.md)
+
+---
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

@@ -1,9 +1,12 @@
 # Vendor Risk Assessment: Example
 
+*Illustrative example — vendor, people and dates are fictional. Framework v1.1.0; reviewed 2026-09-15.*
+
 **Vendor Name:** Apex AI Analytics  
 **Service:** AI-powered customer support triage and sentiment analysis  
 **Requestor:** Customer Experience Team  
-**Assessment Date:** 2024-12-15  
+**Department:** Customer Experience  
+**Assessment Date:** 2026-09-15  
 **Assessor:** Risk & Compliance
 
 ---
@@ -52,7 +55,7 @@ Apex AI Analytics provides a SaaS platform that uses machine learning to automat
 
 ---
 
-### 4. Site & Security Access: **1**
+### 4. Site & Security Access: **2**
 
 | Factor | Assessment |
 |--------|------------|
@@ -60,7 +63,7 @@ Apex AI Analytics provides a SaaS platform that uses machine learning to automat
 | IT system access? | API access to ticketing system (write: create tags; read: ticket content) |
 | Admin privileges? | No admin access; scoped API credentials |
 
-**Score: 1** — Limited, scoped API access to production data.
+**Score: 2** — Scoped read/write API credentials to a production system; no admin privileges or facility access (rubric 3 is reserved for admin/privileged production access).
 
 ---
 
@@ -97,16 +100,16 @@ Apex AI Analytics provides a SaaS platform that uses machine learning to automat
 | 1. Co-Employment Risk | 0 |
 | 2. Data Sensitivity & Privacy | 3 |
 | 3. Physical Safety & Injury Exposure | 0 |
-| 4. Site & Security Access | 1 |
+| 4. Site & Security Access | 2 |
 | 5. Business Continuity Impact | 2 |
 | 6. AI/ML Model Risk | 3 |
-| **TOTAL** | **9 / 18** |
+| **TOTAL** | **10 / 18** |
 
 ---
 
 ## Risk Tier Determination
 
-**Total Score: 9** → **Enhanced Tier**
+**Total Score: 10** → **Enhanced Tier**
 
 **Automatic Escalations Triggered:**
 - ⚠️ Data Sensitivity = 3 → **Privacy/DPO review required**
@@ -120,12 +123,15 @@ Apex AI Analytics provides a SaaS platform that uses machine learning to automat
 
 | Review | Owner | Status |
 |--------|-------|--------|
+| Procurement review | Procurement | ☐ Pending |
 | Security assessment | InfoSec | ☐ Pending |
 | Legal contract review | Legal | ☐ Pending |
 | Privacy/DPO review | Privacy Team | ☐ Pending — triggered by Data Sensitivity = 3 |
 | AI Governance review | AI Ethics Committee | ☐ Pending — triggered by AI/ML Risk = 3 |
 
 ### Required Contract Clauses
+
+All clauses in the applicable sets apply; engagement-specific emphasis or documented deviations are noted below.
 
 Based on Enhanced tier + AI/ML triggers:
 
@@ -137,18 +143,25 @@ Based on Enhanced tier + AI/ML triggers:
 - ☐ Basic Indemnification
 
 **Enhanced Terms:**
-- ☐ Information Security Requirements
+- ☐ Security Requirements
 - ☐ Audit Rights
 - ☐ Subcontractor Flow-Down
+- ☐ Background Checks — *N/A — pure SaaS, no personnel access; documented deviation*
 - ☐ Breach Notification (72-hour)
+
+**Dimension-Triggered Terms:**
+- ☐ Data Processing Agreement — *triggered by Data Sensitivity = 3; include SCCs for EU/California data*
 
 **AI/ML-Specific Terms:**
 - ☐ Model Documentation
 - ☐ Training Data Restrictions — *Critical: prohibit use of our data for general model improvement*
 - ☐ Output Ownership
 - ☐ Transparency & Explainability
-- ☐ Model Update Notification
+- ☐ Human Oversight
+- ☐ Model Updates (30-day notice)
 - ☐ Bias Testing requirements
+- ☐ AI Incident Response
+- ☐ Prohibited Uses
 
 ### Additional Mitigations
 

@@ -1,14 +1,34 @@
 # Vendor Risk Assessment Framework
 
-[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Calculator-blue?style=for-the-badge)](https://delschlangen.github.io/vendor-risk-rubric)
+*Third-party risk management (TPRM) · supplier due diligence · vendor onboarding · contract risk · AI vendor governance*
+
+[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Calculator-blue?style=for-the-badge)](https://delschlangen.github.io/vendor-risk-rubric/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Docs-GitHub%20Pages-blue?style=flat-square)](https://delschlangen.github.io/vendor-risk-rubric)
+[![GitHub Pages](https://img.shields.io/badge/Docs-GitHub%20Pages-blue?style=flat-square)](https://delschlangen.github.io/vendor-risk-rubric/)
+[![Version 1.1.0](https://img.shields.io/badge/version-1.1.0-informational)](CHANGELOG.md)
+[![Cite](https://img.shields.io/badge/cite-CITATION.cff-blue)](CITATION.cff)
 
 **A complete, practical framework for third-party vendor risk management, supplier due diligence, and contract governance.**
 
-Assess vendors across six risk dimensions — co-employment, data sensitivity, physical safety, site access, business continuity, and AI/ML risk — with a scored rubric that determines review pathways and required contract protections. Aligned with NIST CSF, ISO 27001, NIST AI RMF, and regulatory requirements including GDPR, HIPAA, CCPA, SOX, and the EU AI Act.
+Assess vendors across six risk dimensions — co-employment, data sensitivity, physical safety, site access, business continuity, and AI/ML risk — with a scored rubric that determines review pathways and required contract protections. Aligned with the NIST Cybersecurity Framework, ISO/IEC 27001, the NIST AI Risk Management Framework, and regulatory requirements including GDPR, HIPAA, CCPA, SOX, and the EU AI Act.
 
-> **[Use the interactive calculator →](https://delschlangen.github.io/vendor-risk-rubric)** — No installation required. Score vendors directly in your browser.
+> **[Use the interactive calculator →](https://delschlangen.github.io/vendor-risk-rubric/)** — No installation required. Score vendors directly in your browser.
+
+[![Screenshot of the Vendor Risk Assessment Calculator: six dimensions, four risk tiers](docs/og-image.png)](https://delschlangen.github.io/vendor-risk-rubric/)
+
+---
+
+## What's new in v1.1.0 (2026-09-15)
+
+- The calculator now records vendor details and per-dimension justifications, exports Markdown/JSON, supports shareable links, example presets, and conditional reviews and clause triggers aligned to the decision tree.
+- Documentation hub, SEO/social metadata, favicon, sitemap, and 404 page for the live site.
+- Community files: [CONTRIBUTING](CONTRIBUTING.md), [SECURITY](SECURITY.md), [Code of Conduct](CODE_OF_CONDUCT.md), issue forms, and a link checker (`scripts/check_links.py`).
+- Regulatory refresh of the [jurisdiction guide](docs/jurisdiction_considerations.md), including a DORA section and a regulatory watch-list.
+- Consistency fixes across the rubric, examples, and templates.
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
+
+Status: actively maintained — last reviewed 2026-09-15.
 
 ---
 
@@ -39,6 +59,16 @@ Assess vendors across six risk dimensions — co-employment, data sensitivity, p
 3. **Determine review pathway** — Follow the [decision tree](rubric/decision_tree.md)
 4. **Select contract clauses** — Pick from the [clause library](clauses/contract_clauses.md)
 5. **Document the assessment** — Use the [blank assessment template](templates/blank_assessment.md)
+
+### Using the calculator
+
+The [interactive calculator](https://delschlangen.github.io/vendor-risk-rubric/) mirrors the rubric and decision tree:
+
+- **Share links** — Every assessment encodes into the URL; use *Copy link* to share a scored assessment with reviewers or attach it to a ticket. Drafts also autosave in your browser.
+- **Example presets** — Load any of the four worked examples with one click to see how scoring plays out.
+- **Export** — Download the finished assessment as Markdown (ticket-ready) or JSON for your records.
+
+See the [Calculator Guide](docs/calculator_guide.md) for details.
 
 ### For leadership buy-in:
 
@@ -72,9 +102,10 @@ Follow the [adoption guide](docs/adoption_guide.md) — a phased rollout plan wi
 | Document | What It Does |
 |----------|--------------|
 | [Quick Reference](docs/quick_reference.md) | One-page scoring cheat sheet |
+| [Calculator Guide](docs/calculator_guide.md) | How to use the interactive calculator and its exports |
 | [Adoption Guide](docs/adoption_guide.md) | How to implement the framework |
 | [RACI Matrix](docs/raci_matrix.md) | Who is responsible for what |
-| [Jurisdiction Guide](docs/jurisdiction_considerations.md) | EU AI Act, GDPR, CCPA, HIPAA, SOX, GLBA |
+| [Jurisdiction Guide](docs/jurisdiction_considerations.md) | EU AI Act, GDPR, CCPA/CPRA, HIPAA, SOX, GLBA, DORA |
 | [Executive Summary](docs/executive_summary.md) | Leadership-level overview |
 | [FAQ](docs/faq.md) | Common questions answered |
 
@@ -111,7 +142,7 @@ Follow the [adoption guide](docs/adoption_guide.md) — a phased rollout plan wi
 | 11–15 | **High** | + Exec sponsor + Full assessment | 6–12 weeks |
 | 16–18 | **Critical** | + C-suite + Board notification | 6–12 weeks |
 
-**Escalation triggers:** Any single dimension = 3 automatically requires specialist review (even if total score is low).
+**Escalation triggers:** Any single dimension = 3 requires the specialist review and the Enhanced clause set, even if the total score is low; the tier itself is set by the total.
 
 ---
 
@@ -132,13 +163,39 @@ vendor-risk-rubric/
 │   ├── staffing_agency.md      # Contractor (High tier)
 │   ├── low_risk_saas.md        # Simple SaaS (Standard tier)
 │   └── construction_vendor.md  # Physical work (Enhanced tier)
-├── docs/
+├── docs/                       # GitHub Pages site + guides
+│   ├── index.html              # Interactive risk calculator
+│   ├── app.js                  # Calculator logic
+│   ├── styles.css              # Calculator styles
+│   ├── 404.html                # Not-found page for the live site
+│   ├── sitemap.xml             # Search engine sitemap
+│   ├── robots.txt              # Crawler directives
+│   ├── favicon.svg             # Site icon (SVG)
+│   ├── favicon-32.png          # Site icon (32×32 PNG)
+│   ├── apple-touch-icon.png    # iOS home-screen icon (180×180)
+│   ├── og-image.png            # Social sharing image (1200×630)
+│   ├── calculator_guide.md     # How to use the calculator
 │   ├── quick_reference.md      # One-page cheat sheet
 │   ├── adoption_guide.md       # Implementation guide
 │   ├── raci_matrix.md          # Role accountability
 │   ├── jurisdiction_considerations.md  # Regulatory requirements
 │   ├── executive_summary.md    # Leadership overview
 │   └── faq.md                  # Common questions
+├── .github/
+│   ├── ISSUE_TEMPLATE/         # Structured issue forms
+│   │   ├── calculator_bug.yml
+│   │   ├── content_correction.yml
+│   │   ├── new_example.yml
+│   │   ├── regulatory_update.yml
+│   │   └── config.yml
+│   └── PULL_REQUEST_TEMPLATE.md
+├── scripts/
+│   └── check_links.py          # Relative-link checker (stdlib only)
+├── CHANGELOG.md                # Release history
+├── CITATION.cff                # Citation metadata
+├── CONTRIBUTING.md             # How to contribute
+├── CODE_OF_CONDUCT.md          # Contributor Covenant 2.1
+├── SECURITY.md                 # Security policy
 ├── README.md
 └── LICENSE
 ```
@@ -163,22 +220,18 @@ vendor-risk-rubric/
 
 This framework aligns with:
 
-- **NIST Cybersecurity Framework** — Supply chain risk management
-- **ISO 27001 Annex A.15** — Supplier relationship security
-- **NIST AI RMF** — AI supply chain considerations
-- **Common regulatory expectations** — GDPR, HIPAA, SOX vendor oversight requirements
+- **NIST Cybersecurity Framework** — supply chain risk management ([NIST](https://www.nist.gov/cyberframework))
+- **ISO/IEC 27001** — supplier relationship controls ([ISO](https://www.iso.org/standard/27001))
+- **NIST AI Risk Management Framework** — AI supply chain considerations ([NIST](https://www.nist.gov/itl/ai-risk-management-framework))
+- **Common regulatory expectations** — GDPR, HIPAA, CCPA/CPRA, SOX, GLBA, EU AI Act, DORA vendor-oversight requirements
 
 ---
 
 ## Contributing
 
-This framework is MIT licensed. Fork it, customize it, make it yours.
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose examples, clauses, corrections, and regulatory updates, and note the [Code of Conduct](CODE_OF_CONDUCT.md) and [security policy](SECURITY.md).
 
-Contributions welcome:
-- New examples for different vendor types
-- Industry-specific adaptations
-- Additional contract clauses
-- Translations
+Use the structured issue forms to get started: [Report a calculator bug](https://github.com/delschlangen/vendor-risk-rubric/issues/new?template=calculator_bug.yml), [Content correction](https://github.com/delschlangen/vendor-risk-rubric/issues/new?template=content_correction.yml), [Propose an example](https://github.com/delschlangen/vendor-risk-rubric/issues/new?template=new_example.yml), or [Regulatory update](https://github.com/delschlangen/vendor-risk-rubric/issues/new?template=regulatory_update.yml).
 
 ---
 
@@ -186,7 +239,7 @@ Contributions welcome:
 
 Use the interactive risk calculator directly in your browser:
 
-**https://delschlangen.github.io/vendor-risk-rubric**
+**https://delschlangen.github.io/vendor-risk-rubric/**
 
 No installation or dependencies required. Score vendors, see required reviews, and get contract clause recommendations instantly.
 
@@ -199,10 +252,23 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 If you use this framework in your work, please cite it:
 
 ```
-Del Schlangen. (2024). Vendor Risk Assessment Framework. GitHub. https://github.com/delschlangen/vendor-risk-rubric
+Schlangen, D. (2026). Vendor Risk Assessment Framework (Version 1.1.0) [Computer software]. https://github.com/delschlangen/vendor-risk-rubric
 ```
 
-See [CITATION.cff](CITATION.cff) for BibTeX and other citation formats.
+BibTeX:
+
+```bibtex
+@software{schlangen_vendor_risk_2026,
+  author  = {Schlangen, Del},
+  title   = {Vendor Risk Assessment Framework},
+  version = {1.1.0},
+  year    = {2026},
+  month   = {9},
+  url     = {https://github.com/delschlangen/vendor-risk-rubric}
+}
+```
+
+See [CITATION.cff](CITATION.cff) for machine-readable citation metadata.
 
 ---
 

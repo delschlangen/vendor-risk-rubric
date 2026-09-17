@@ -1,10 +1,12 @@
 # Vendor Risk Assessment: Construction Vendor
 
+*Illustrative example — vendor, people and dates are fictional. Framework v1.1.0; reviewed 2026-09-15.*
+
 **Vendor Name:** BuildRight Commercial Construction
 **Service:** Office renovation and buildout (new floor expansion)
 **Requestor:** Facilities
 **Department:** Real Estate & Facilities
-**Assessment Date:** 2024-12-15
+**Assessment Date:** 2026-09-15
 **Assessor:** Risk & Compliance
 
 ---
@@ -119,22 +121,28 @@ BuildRight will perform a major renovation of our new 4th floor office space, in
 | Review | Owner | Status |
 |--------|-------|--------|
 | Procurement review | Procurement | Pending |
+| Security assessment | InfoSec | Pending — Enhanced tier (scope limited to badge/physical access; no IT systems) |
 | Legal contract review | Legal | Pending |
 | EHS review | Environmental Health & Safety | Pending — triggered by Physical Safety = 3 |
 | Facilities coordination | Facilities | Pending |
 
 ### Required Contract Clauses
 
+All clauses in the applicable sets apply; engagement-specific emphasis or documented deviations are noted below.
+
 **Standard Terms:**
 - Confidentiality (for building plans, security info)
+- Data Return/Destruction — building plans and site documentation returned at project close
 - Insurance — *Critical: require adequate coverage*
 - Compliance with Laws
 - Basic Indemnification
 
 **Enhanced Terms:**
+- Security Requirements — badge protocols, escort for sensitive areas
+- Audit Rights
 - Subcontractor Flow-Down
 - Background Checks — for all crew accessing building
-- Security Requirements — badge protocols, escort for sensitive areas
+- Breach Notification (72-hour)
 
 ### Safety-Specific Requirements
 

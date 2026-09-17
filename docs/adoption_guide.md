@@ -1,5 +1,7 @@
 # Adoption Guide
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 How to implement this vendor risk framework in your organization.
 
 ---
@@ -29,18 +31,19 @@ How to implement this vendor risk framework in your organization.
 **Goal:** Customize the framework for your organization
 
 1. **Review and adapt the rubric**
-   - Read `rubric/risk_rubric.md` with key stakeholders
+   - Read [rubric/risk_rubric.md](../rubric/risk_rubric.md) with key stakeholders
    - Adjust scoring thresholds if needed for your risk appetite
+   - If you customize thresholds and use the calculator, make the same change in docs/app.js (TIERS, REVIEW_RULES, CLAUSES) so the tool and rubric stay in sync
    - Add organization-specific indicators to each dimension
-   - Example: If you're a healthcare company, you may want Data Sensitivity = 2 to include any PHI, not just "PII"
+   - Example: A healthcare company may want any data derived from PHI — even de-identified or limited data sets — to score at least 2, and any identifiable PHI to score 3 (the default).
 
 2. **Customize the decision tree**
-   - Add specific team names and owners to `rubric/decision_tree.md`
+   - Add specific team names and owners to [rubric/decision_tree.md](../rubric/decision_tree.md)
    - Map review roles to actual people/teams in your organization
    - Adjust timelines based on your capacity
 
 3. **Adapt contract clauses**
-   - Have Legal review `clauses/contract_clauses.md`
+   - Have Legal review [clauses/contract_clauses.md](../clauses/contract_clauses.md)
    - Modify language for your jurisdiction
    - Add company-specific requirements
    - Create versions for different contract types (MSA, SOW, etc.)
@@ -62,7 +65,7 @@ How to implement this vendor risk framework in your organization.
    - Include at least one AI/ML vendor if applicable
 
 2. **Run pilot assessments**
-   - Use `templates/blank_assessment.md` for each vendor
+   - Score each pilot vendor with the [interactive calculator](https://delschlangen.github.io/vendor-risk-rubric/), then Download .md to fill [templates/blank_assessment.md](../templates/blank_assessment.md) for each vendor
    - Time how long each assessment takes
    - Note pain points and confusion
    - Track whether the tier felt "right"
@@ -90,12 +93,13 @@ How to implement this vendor risk framework in your organization.
 
 1. **Communicate the change**
    - Announce new vendor risk process to stakeholders
-   - Share `docs/executive_summary.md` with leadership
-   - Distribute `docs/quick_reference.md` to frequent users
+   - Share [docs/executive_summary.md](executive_summary.md) with leadership
+   - Distribute [docs/quick_reference.md](quick_reference.md) to frequent users
 
 2. **Train key users**
    - Procurement team: Full training on process
    - Requestors: Overview + how to complete intake questionnaire
+   - Requestors/analysts: 10-minute calculator walkthrough ([calculator_guide.md](calculator_guide.md))
    - Reviewers (Legal, Security, etc.): Their role in the process
 
 3. **Integrate with existing processes**
@@ -106,7 +110,7 @@ How to implement this vendor risk framework in your organization.
 4. **Make materials accessible**
    - Host framework in a shared location (SharePoint, Confluence, etc.)
    - Create bookmarks/links in procurement systems
-   - Consider building a simple web form for scoring
+   - Point users to the hosted calculator (https://delschlangen.github.io/vendor-risk-rubric/) or copy the docs/ folder (index.html, app.js, styles.css) to your intranet — it is static, has no dependencies and works from a file share ([calculator guide](calculator_guide.md))
 
 **Deliverables:**
 - [ ] Training materials for each audience
@@ -136,14 +140,18 @@ How to implement this vendor risk framework in your organization.
    - Annual update of scoring criteria
    - Add new examples as you encounter novel scenarios
    - Update contract clauses for regulatory changes
+   - Update the Last reviewed / version footer on every doc you change
+   - Run the jurisdiction watch-list ([jurisdiction_considerations.md §8](jurisdiction_considerations.md)) each half-year
+   - If you host your own copy of the calculator, diff docs/app.js against upstream when thresholds change
 
 **Metrics to track:**
 | Metric | Target |
 |--------|--------|
-| Average assessment time | 2 days for Standard, 5 days for Enhanced |
+| Risk-team scoring turnaround (intake received → tier assigned) | 2 days for Standard, 5 days for Enhanced |
 | Tier distribution | ~60% Standard, ~30% Enhanced, ~10% High/Critical |
 | Exception rate | < 5% of assessments require exceptions |
 | Contract clause adoption | 100% of contracts include required clauses |
+| Documentation currency | All docs reviewed within the last 12 months |
 
 ---
 
@@ -182,7 +190,7 @@ If you need to deploy quickly, focus on these essentials:
 | Legal | As needed | Review Enhanced/High contracts; approve clauses |
 | InfoSec | As needed | Conduct security reviews for Enhanced+ |
 
-**Optional but valuable:**
+**Required when triggered (dimension = 3), otherwise as needed:**
 - Privacy/DPO for data-intensive vendors
 - EHS for physical safety vendors
 - AI Governance for AI/ML vendors
@@ -192,7 +200,7 @@ If you need to deploy quickly, focus on these essentials:
 
 ## Getting Buy-In
 
-**For executives:** Share `docs/executive_summary.md` which covers:
+**For executives:** Share [docs/executive_summary.md](executive_summary.md) which covers:
 - Risk reduction benefits
 - Regulatory compliance alignment
 - Time savings from standardization
@@ -222,4 +230,7 @@ The framework is designed to be extended. Fork it, customize it, make it yours.
 
 ---
 
-*Questions? Create an issue in this repository or adapt the FAQ for your organization.*
+*Questions? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues) or adapt the FAQ for your organization.*
+
+---
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

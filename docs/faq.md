@@ -1,5 +1,7 @@
 # Frequently Asked Questions
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 Common questions about implementing and using the vendor risk framework.
 
 ---
@@ -25,13 +27,14 @@ This framework provides a repeatable, scored methodology that routes vendors to 
 
 ### How long does an assessment take?
 
-| Tier | Typical Assessment Time |
-|------|------------------------|
-| Standard | 1–2 days |
-| Enhanced | 3–5 days |
-| High/Critical | 1–2 weeks |
+| Tier | Risk-team scoring & routing (target) | End-to-end onboarding incl. reviews |
+|------|--------------------------------------|-------------------------------------|
+| Standard | 1–2 days | 1–2 weeks |
+| Enhanced | 3–5 days | 3–6 weeks |
+| High | 1–2 weeks | 6–12 weeks |
+| Critical | 1–2 weeks | 6–12 weeks |
 
-The intake questionnaire takes requestors about 15–20 minutes to complete.
+Scoring itself takes minutes with the calculator; elapsed time is driven by reviewer queues and contract negotiation. The intake questionnaire takes requestors about 15–20 minutes to complete.
 
 ### Do I need to use all of this?
 
@@ -40,11 +43,23 @@ No. Start with:
 2. The scoring rubric (to determine tier)
 3. The contract clause checklist (to ensure protections)
 
-Add the decision tree, RACI, and specialized reviews as you mature.
+Add the decision tree and RACI as you mature. Specialist reviews triggered by a dimension score of 3 are required from day one — in a small organization, name who covers each (e.g., outside counsel for co-employment).
 
 ---
 
 ## Scoring Questions
+
+### Is there a calculator?
+
+Yes — the interactive calculator at https://delschlangen.github.io/vendor-risk-rubric/ scores all six dimensions, shows the tier, automatic escalations, required reviews and required clause sets, and exports the filled assessment. See the [calculator guide](calculator_guide.md).
+
+### Does the calculator store or transmit my answers?
+
+No server is involved; all logic runs in the browser. A draft is kept in your own browser's localStorage and in the link you copy; use Download .md / Print to keep a record.
+
+### How do the calculator and the blank assessment template relate?
+
+The calculator handles scoring, routing and export; the template is the record with approvals and mitigations. The calculator's Download .md produces the filled template.
 
 ### What if I'm not sure which score to pick?
 
@@ -66,9 +81,9 @@ Yes. The thresholds (0–5, 6–10, 11–15, 16–18) are starting points. Adjus
 
 Document any changes in your customized version.
 
-### Why does a single dimension = 3 trigger escalation?
+### Why does a single dimension = 3 trigger a specialist review?
 
-A dimension score of 3 indicates significant risk in that area. Even if the total score is low, that specific risk needs specialist attention. For example:
+A dimension score of 3 indicates significant risk in that area. Even if the total score is low, that specific risk needs specialist attention. The dimension score adds the specialist review and the Enhanced clause set; the tier itself is still set by the total score. For example:
 - A simple SaaS tool (low total score) that accesses regulated health data (Data Sensitivity = 3) still needs Privacy review
 - A straightforward contractor (low total score) doing high-risk construction work (Physical Safety = 3) still needs EHS review
 
@@ -168,7 +183,7 @@ Typically Risk/Compliance or Procurement, with support from:
 
 ### How do we get executive buy-in?
 
-Share the `docs/executive_summary.md` and emphasize:
+Share the [executive summary](executive_summary.md) and emphasize:
 - Risk reduction (avoid vendor-related incidents)
 - Regulatory alignment (NIST, ISO, etc.)
 - Efficiency gains (standardized process saves time)
@@ -203,7 +218,7 @@ The framework is tool-agnostic. Common integrations:
 
 ### What about sole-source vendors?
 
-Sole-source situations don't change the risk score — they increase Business Continuity Impact. Assess normally, then:
+Sole-source status is captured through the Business Continuity dimension — a sole-source or single-point-of-failure vendor normally scores 3 there, which raises the total and triggers Finance review. Assess normally, then:
 - Document why alternatives don't exist
 - Require stronger business continuity and exit planning terms
 - Consider source code escrow for critical software
@@ -236,6 +251,7 @@ The framework is designed for third-party vendors. For internal transfers:
 | Scoring criteria | Annually |
 | Decision tree / RACI | When org structure changes |
 | Examples | As new scenarios arise |
+| Jurisdiction guide | Semi-annually — see its [watch-list (§8)](jurisdiction_considerations.md) |
 
 ### How do we handle new risk dimensions?
 
@@ -266,3 +282,10 @@ Yes! This framework is MIT licensed. Fork it, customize it, and consider contrib
 - Additional contract clauses
 - Industry-specific adaptations
 - Translations
+
+---
+
+Related documents: [Jurisdiction guide](jurisdiction_considerations.md) · [RACI matrix](raci_matrix.md) · [Decision tree](../rubric/decision_tree.md) · [Examples](../examples/) · [Calculator guide](calculator_guide.md)
+
+---
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

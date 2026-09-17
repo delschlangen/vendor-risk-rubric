@@ -1,0 +1,51 @@
+name: Regulatory update
+description: Report a change in a law or standard the framework references.
+title: "[Regulatory]: "
+labels:
+  - regulatory
+  - needs-citation
+body:
+  - type: dropdown
+    id: regulation
+    attributes:
+      label: Regulation
+      options:
+        - EU AI Act
+        - GDPR
+        - UK GDPR
+        - CCPA/CPRA
+        - Other US state law
+        - HIPAA
+        - SOX
+        - GLBA
+        - DORA
+        - NIS2/CRA
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: effective-date
+    attributes:
+      label: Effective / enforcement date
+      placeholder: e.g. 2026-08-02
+    validations:
+      required: true
+  - type: input
+    id: source-url
+    attributes:
+      label: Primary source URL (regulator, official journal, statute)
+      placeholder: https://eur-lex.europa.eu/...
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Which dimension, clause or guide section is affected
+      placeholder: e.g. docs/jurisdiction_considerations.md — EU AI Act section; AI/ML clause set
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed change
+      description: What should the framework say instead? Include "as of YYYY-MM" hedging where appropriate.

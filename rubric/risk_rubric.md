@@ -1,5 +1,7 @@
 # Vendor Risk Assessment Rubric
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 A standardized scoring framework for evaluating third-party vendor risk across six dimensions. Each dimension is scored 0–3, with total scores determining the required review pathway.
 
 ---
@@ -123,16 +125,16 @@ Risk from vendor use of artificial intelligence or machine learning in delivered
 
 ## Additional Triggers
 
-Regardless of total score, escalate to **Enhanced** or **High** tier if any single dimension scores **3**.
+Regardless of total score, any single dimension scoring **3** requires the specialist review below **and** the Enhanced clause set at minimum (see [contract_clauses.md](../clauses/contract_clauses.md)). The risk tier itself is still determined by the total score; the decision tree §4 lists the dimension-specific actions.
 
-| Single Dimension = 3 | Auto-Escalation |
+| Single Dimension = 3 | Required Specialist Review |
 |---------------------|-----------------|
 | Co-Employment = 3 | Employment counsel review required |
 | Data Sensitivity = 3 | Privacy/DPO review required |
 | Physical Safety = 3 | EHS review required |
 | Site/Security Access = 3 | InfoSec review required |
-| Business Continuity = 3 | Procurement + Finance review required |
-| AI/ML Risk = 3 | AI governance/ethics review required |
+| Business Continuity = 3 | Finance review required (Procurement consulted) |
+| AI/ML Risk = 3 | AI Governance review required |
 
 ---
 
@@ -141,3 +143,4 @@ Regardless of total score, escalate to **Enhanced** or **High** tier if any sing
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial release |
+| 1.1 | 2026-09 | Clarified that a dimension = 3 adds a specialist review and the Enhanced clause set without changing the tier; aligned reviewer names with the decision tree and RACI |

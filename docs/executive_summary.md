@@ -1,5 +1,7 @@
 # Executive Summary: Vendor Risk Assessment Framework
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 *A one-page overview for leadership*
 
 ---
@@ -44,7 +46,7 @@ This framework provides a **standardized, scored approach** to vendor risk:
 - Predictable timelines for each tier
 
 ### 3. Regulatory Alignment
-- Aligns with NIST Cybersecurity Framework, ISO 27001, NIST AI RMF
+- Aligns with NIST Cybersecurity Framework 2.0 (Govern / supply chain risk, GV.SC), ISO/IEC 27001:2022 supplier controls (Annex A 5.19–5.23) and NIST AI RMF 1.0
 - Defensible, documented decisions
 - Audit-ready process
 
@@ -99,7 +101,7 @@ Vendor Request → Intake Questionnaire → Risk Scoring → Tier Assignment →
 
 | Metric | Target |
 |--------|--------|
-| Assessment turnaround time | 2 days (Standard), 5 days (Enhanced) |
+| Risk-team scoring turnaround (intake received → tier assigned) | 2 days (Standard), 5 days (Enhanced) |
 | Tier distribution | ~60% Standard, ~30% Enhanced, ~10% High+ |
 | Contract clause adoption | 100% of contracts include required clauses |
 | Exception rate | < 5% |
@@ -110,9 +112,9 @@ Vendor Request → Intake Questionnaire → Risk Scoring → Tier Assignment →
 
 Without a structured vendor risk framework:
 
-- **Regulatory risk** — Regulators increasingly expect vendor oversight programs
-- **Incident risk** — ~60% of data breaches involve third parties
-- **Employment risk** — Worker misclassification claims are increasing
+- **Regulatory risk** — Regulators (GDPR Art. 28, HIPAA, GLBA, DORA, the EU AI Act) increasingly hold organizations accountable for their vendors' conduct
+- **Incident risk** — A large share of publicly reported breaches originate with vendors and suppliers
+- **Employment risk** — Misclassification of embedded contractors creates employment-law exposure
 - **AI risk** — AI vendor issues are emerging as a major liability area
 - **Reputation risk** — Vendor failures become your failures
 
@@ -126,4 +128,7 @@ Adopt this framework to establish a defensible, efficient, and comprehensive ven
 
 ---
 
-*Framework: [github.com/your-org/vendor-risk-rubric](https://github.com) | Questions: [Contact Risk/Compliance]*
+*Framework: [github.com/delschlangen/vendor-risk-rubric](https://github.com/delschlangen/vendor-risk-rubric) · [Interactive calculator](https://delschlangen.github.io/vendor-risk-rubric/) · Questions: open an issue on GitHub (adopters: replace with your Risk/Compliance contact)*
+
+---
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

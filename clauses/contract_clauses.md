@@ -1,5 +1,7 @@
 # Model Contract Clauses
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 Sanitized contract language organized by risk tier. These are templates—actual language should be reviewed by legal counsel for your jurisdiction and specific circumstances.
 
 ---
@@ -30,9 +32,9 @@ Include these clauses in every vendor contract regardless of risk score.
 
 ---
 
-## Enhanced Terms (Score 6–10)
+## Enhanced Terms (Score 6+ or any dimension = 3)
 
-Add these clauses for Enhanced tier vendors.
+Add these clauses for Enhanced tier and above, and for any vendor with a single dimension scored 3 regardless of total score. Clause sets are cumulative.
 
 ### Security Requirements
 
@@ -42,6 +44,8 @@ Add these clauses for Enhanced tier vendors.
 
 > **Audit Rights.** Upon reasonable notice, Company may audit Vendor's compliance with the security and privacy requirements of this Agreement. Such audits may include review of Vendor's SOC 2 reports, penetration test results, or on-site assessments. Vendor shall cooperate with such audits at no additional cost to Company.
 
+*Required whenever Site/Security Access = 3, regardless of total score.*
+
 ### Subcontractor Flow-Down
 
 > **Subcontractors.** Vendor shall not subcontract any obligations involving Company data without prior written consent. Approved subcontractors shall be bound by terms no less protective than those in this Agreement. Vendor remains responsible for subcontractor compliance.
@@ -50,19 +54,25 @@ Add these clauses for Enhanced tier vendors.
 
 > **Personnel.** Vendor shall ensure that all personnel with access to Company data or facilities have undergone background checks appropriate to their role and consistent with applicable law.
 
+*Required whenever Site/Security Access = 3, regardless of total score.*
+
 ### Breach Notification
 
 > **Breach Notification.** Vendor shall notify Company within seventy-two (72) hours of discovering any actual or reasonably suspected breach of security affecting Company data. Such notice shall include the nature of the breach, categories of data affected, and remediation steps.
+
+*Required whenever Data Sensitivity = 3, regardless of total score.*
 
 ---
 
 ## High-Risk Terms (Score 11+)
 
-Add these clauses for High/Critical tier vendors.
+Add these clauses, in addition to Standard and Enhanced terms, for High and Critical tier vendors. Individual clauses are also required by dimension triggers (see notes).
 
 ### Data Processing Agreement
 
 > **Data Processing.** The parties shall execute a Data Processing Agreement substantially in the form attached as Exhibit A, which shall govern Vendor's processing of personal data on behalf of Company.
+
+*Required whenever Data Sensitivity = 3, or Data Sensitivity ≥ 2 and personal data of EU/UK residents is processed, regardless of total score (see [decision_tree.md §4](../rubric/decision_tree.md) and [jurisdiction_considerations.md §2](../docs/jurisdiction_considerations.md)).*
 
 ### Business Continuity
 
@@ -72,6 +82,8 @@ Add these clauses for High/Critical tier vendors.
 
 > **Termination for Convenience.** Company may terminate this Agreement for any reason upon sixty (60) days' written notice. Upon such termination, Vendor shall provide transition assistance as reasonably requested by Company for a period of up to ninety (90) days at Vendor's then-current rates.
 
+*Required (as the exit/transition plan) whenever Business Continuity = 3, regardless of total score.*
+
 ### Step-In Rights
 
 > **Step-In Rights.** In the event Vendor becomes unable to perform critical services, Company shall have the right to step in and assume operational control, either directly or through a third party, to ensure continuity of services. Vendor shall provide all reasonable assistance and access to enable such step-in.
@@ -80,9 +92,13 @@ Add these clauses for High/Critical tier vendors.
 
 > **Escrow.** For custom software development, Vendor shall deposit source code and documentation with a mutually agreed escrow agent. Release conditions shall include Vendor's bankruptcy, material breach, or discontinuation of support.
 
+*Recommended whenever Business Continuity = 3.*
+
 ### Financial Covenants
 
 > **Financial Health.** Vendor shall provide annual audited financial statements upon request. Vendor shall promptly notify Company of any material adverse change in its financial condition, including any bankruptcy filing or change of control.
+
+*Recommended whenever Business Continuity = 3.*
 
 ---
 
@@ -138,6 +154,7 @@ Add these clauses when AI/ML Risk ≥ 2.
 | Critical infrastructure vendor | Standard + Enhanced + High-Risk |
 | AI vendor processing customer data | Standard + Enhanced + AI/ML |
 | Mission-critical AI platform | Standard + Enhanced + High-Risk + AI/ML |
+| Any vendor with a single dimension = 3 (total < 6) | Standard + Enhanced (+ dimension-specific clauses above) |
 
 ---
 
@@ -155,3 +172,4 @@ Add these clauses when AI/ML Risk ≥ 2.
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial release |
+| 1.1 | 2026-09 | Enhanced set retitled to 'Score 6+ or any dimension = 3'; added dimension-trigger notes (DPA, Audit Rights, Background Checks, Breach Notification, exit plan, escrow) |

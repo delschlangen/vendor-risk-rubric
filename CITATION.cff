@@ -12,8 +12,12 @@ authors:
     given-names: Del
     orcid: "https://orcid.org/0009-0005-5116-9564"
 repository-code: "https://github.com/delschlangen/vendor-risk-rubric"
-url: "https://delschlangen.github.io/vendor-risk-rubric"
+url: "https://delschlangen.github.io/vendor-risk-rubric/"
 license: MIT
+identifiers:
+  - type: url
+    value: "https://github.com/delschlangen/vendor-risk-rubric/releases/tag/v1.1.0"
+    description: "Release v1.1.0"
 keywords:
   - vendor-risk
   - third-party-risk
@@ -22,7 +26,7 @@ keywords:
   - contract-management
   - risk-assessment
   - compliance
-  - grm
+  - grc
   - governance
   - ai-governance
   - gdpr
@@ -30,5 +34,8 @@ keywords:
   - ccpa
   - eu-ai-act
   - supply-chain-risk
-version: "1.0.0"
-date-released: "2024-12-25"
+  - tprm
+  - third-party-risk-management
+  - vendor-risk-assessment
+version: "1.1.0"
+date-released: "2026-09-15"

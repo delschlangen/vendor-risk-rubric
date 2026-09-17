@@ -9,6 +9,9 @@
 **Your Name:**
 **Your Department:**
 **Date:**
+**Framework version:** v1.1.0
+
+**Where will vendor personnel perform work? (countries / states):** ___
 
 **Vendor Name:**
 **Vendor Website:**
@@ -79,15 +82,28 @@
 - [ ] Yes — temporarily during processing
 - [ ] Yes — long-term storage
 
+**Where are the individuals whose data is involved located?** (check all)
+- [ ] US — states: ___
+- [ ] EU/EEA
+- [ ] UK
+- [ ] Other: ___
+
 **Is this data subject to specific regulations?** (check all that apply)
 - [ ] None known
 - [ ] GDPR (EU data)
+- [ ] UK GDPR
 - [ ] CCPA (California consumer data)
+- [ ] Other US state privacy law
 - [ ] HIPAA (health data)
 - [ ] PCI-DSS (payment cards)
 - [ ] SOX (financial controls)
+- [ ] GLBA (consumer financial data)
 - [ ] FERPA (education records)
+- [ ] AI-specific regulation (EU AI Act, US state AI laws)
+- [ ] DORA (EU financial sector ICT services)
 - [ ] Other: _______________
+
+*Risk team: use [jurisdiction_considerations.md §5](../docs/jurisdiction_considerations.md) to determine required addenda.*
 
 ---
 
@@ -154,11 +170,9 @@
 - [ ] None — unique/sole source
 
 **How long would it take to switch to an alternative vendor?**
-- [ ] Days
-- [ ] Weeks
-- [ ] 1–3 months
-- [ ] 3–6 months
-- [ ] > 6 months
+- [ ] < 30 days
+- [ ] 30–90 days
+- [ ] > 90 days
 
 **What happens if this vendor is suddenly unavailable?**
 
@@ -262,6 +276,69 @@ Please attach or provide links to:
 
 *For Risk Team Use Only:*
 
+## Scoring Key (Risk Team)
+
+Map questionnaire answers to preliminary rubric scores using the tables below. Two rules apply throughout:
+
+1. **Within a dimension, take the highest indicated score.**
+2. **Unknown → score provisionally at the higher level and follow up.**
+
+### Co-Employment (Section 2)
+
+| Question | Answer | Indicated score |
+|----------|--------|-----------------|
+| On-site work? | No — remote/virtual only | 0 |
+| On-site work? | Occasionally, vendor manages own team | 1 |
+| On-site / direction / equipment | Regular on-site; mixed supervision **or** access to our software / company equipment | 2 |
+| On-site / direction / duration | Daily/embedded; primarily our managers direct the work; **or** > 12 months with company badge/email | 3 |
+
+### Data Sensitivity & Privacy (Section 3)
+
+| Answer | Indicated score |
+|--------|-----------------|
+| None / public information only | 0 |
+| Internal business documents (non-sensitive) | 1 |
+| Customer or employee PII; NDA-confidential data | 2 |
+| PHI, PCI, GDPR/CCPA-regulated data, financial records, trade secrets, source code | 3 |
+
+### Physical Safety (Section 4)
+
+| Answer | Indicated score |
+|--------|-----------------|
+| None — remote/virtual | 0 |
+| Office work | 1 |
+| Light maintenance, equipment installation/repair, vehicles | 2 |
+| Construction, heights, electrical, confined spaces | 3 |
+
+### Site & Security Access (Section 5)
+
+| Answer | Indicated score |
+|--------|-----------------|
+| No facility or system access | 0 |
+| Lobby/escorted areas only; read-only system access | 1 |
+| Unescorted badge access; read/write to business applications | 2 |
+| Server room / secure areas / production environments; admin/privileged credentials | 3 |
+
+### Business Continuity (Section 6)
+
+| Answer | Indicated score |
+|--------|-----------------|
+| Many alternatives; switch in < 30 days | 0 |
+| Several alternatives; switch in ~30 days | 1 |
+| Few alternatives **or** 30–90 day switch | 2 |
+| Sole source; > 90 day switch; **or** criticality = "Essential" | 3 |
+
+### AI/ML Risk (Section 7)
+
+| Answer | Indicated score |
+|--------|-----------------|
+| No AI/ML | 0 |
+| General vendor model; informational output only | 1 |
+| Fine-tuned or possibly trained on our data; influences internal decisions | 2 |
+| Trained on our data; drives customer/employee/financial/compliance decisions; **or** ownership unclear | 3 |
+
+---
+
 | Dimension | Preliminary Score |
 |-----------|------------------|
 | Co-Employment | |
@@ -275,3 +352,10 @@ Please attach or provide links to:
 **Preliminary Tier:** [ ] Standard  [ ] Enhanced  [ ] High  [ ] Critical
 
 **Assigned Analyst:** _________________________ **Date:** _______________
+
+---
+
+Related documents: [Blank assessment template](../templates/blank_assessment.md) · [Calculator guide](../docs/calculator_guide.md) — *Risk team: score with the calculator and record the result in the assessment template.*
+
+---
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*
