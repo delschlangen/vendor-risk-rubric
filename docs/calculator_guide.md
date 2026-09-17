@@ -6,7 +6,7 @@
 
 ## 1. What it is
 
-The interactive calculator at **https://delschlangen.github.io/vendor-risk-rubric/** is a static web page implementing the six-dimension risk rubric. It runs offline and from a file share; nothing is sent to a server — drafts are kept only in your browser and in the link you copy.
+The interactive calculator at **https://delschlangen.com/** is a static web page implementing the six-dimension risk rubric. It runs offline and from a file share; nothing is sent to a server — drafts are kept only in your browser and in the link you copy.
 
 ---
 
