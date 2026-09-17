@@ -65,7 +65,7 @@ How to implement this vendor risk framework in your organization.
    - Include at least one AI/ML vendor if applicable
 
 2. **Run pilot assessments**
-   - Score each pilot vendor with the [interactive calculator](https://delschlangen.com/), then Download .md to fill [templates/blank_assessment.md](../templates/blank_assessment.md) for each vendor
+   - Score each pilot vendor with the [interactive calculator](https://delschlangen.com/vendor-risk-rubric/), then Download .md to fill [templates/blank_assessment.md](../templates/blank_assessment.md) for each vendor
    - Time how long each assessment takes
    - Note pain points and confusion
    - Track whether the tier felt "right"
@@ -110,7 +110,7 @@ How to implement this vendor risk framework in your organization.
 4. **Make materials accessible**
    - Host framework in a shared location (SharePoint, Confluence, etc.)
    - Create bookmarks/links in procurement systems
-   - Point users to the hosted calculator (https://delschlangen.com/) or copy the docs/ folder (index.html, app.js, styles.css) to your intranet — it is static, has no dependencies and works from a file share ([calculator guide](calculator_guide.md))
+   - Point users to the hosted calculator (https://delschlangen.com/vendor-risk-rubric/) or copy the docs/ folder (index.html, app.js, styles.css) to your intranet — it is static, has no dependencies and works from a file share ([calculator guide](calculator_guide.md))
 
 **Deliverables:**
 - [ ] Training materials for each audience

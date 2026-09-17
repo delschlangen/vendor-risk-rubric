@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://delschlangen.com/sitemap.xml
+Sitemap: https://delschlangen.com/vendor-risk-rubric/sitemap.xml

@@ -128,7 +128,7 @@ Adopt this framework to establish a defensible, efficient, and comprehensive ven
 
 ---
 
-*Framework: [github.com/delschlangen/vendor-risk-rubric](https://github.com/delschlangen/vendor-risk-rubric) · [Interactive calculator](https://delschlangen.com/) · Questions: open an issue on GitHub (adopters: replace with your Risk/Compliance contact)*
+*Framework: [github.com/delschlangen/vendor-risk-rubric](https://github.com/delschlangen/vendor-risk-rubric) · [Interactive calculator](https://delschlangen.com/vendor-risk-rubric/) · Questions: open an issue on GitHub (adopters: replace with your Risk/Compliance contact)*
 
 ---
 *Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

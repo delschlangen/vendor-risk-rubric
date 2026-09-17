@@ -51,7 +51,7 @@ Add the decision tree and RACI as you mature. Specialist reviews triggered by a 
 
 ### Is there a calculator?
 
-Yes — the interactive calculator at https://delschlangen.com/ scores all six dimensions, shows the tier, automatic escalations, required reviews and required clause sets, and exports the filled assessment. See the [calculator guide](calculator_guide.md).
+Yes — the interactive calculator at https://delschlangen.com/vendor-risk-rubric/ scores all six dimensions, shows the tier, automatic escalations, required reviews and required clause sets, and exports the filled assessment. See the [calculator guide](calculator_guide.md).
 
 ### Does the calculator store or transmit my answers?
 

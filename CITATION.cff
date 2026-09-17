@@ -12,7 +12,7 @@ authors:
     given-names: Del
     orcid: "https://orcid.org/0009-0005-5116-9564"
 repository-code: "https://github.com/delschlangen/vendor-risk-rubric"
-url: "https://delschlangen.com/"
+url: "https://delschlangen.com/vendor-risk-rubric/"
 license: MIT
 identifiers:
   - type: url
