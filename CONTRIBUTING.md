@@ -21,7 +21,7 @@ For anything larger than a typo fix, open an issue first using the matching [iss
 3. Compute the tier from the total: **Standard 0–5, Enhanced 6–10, High 11–15, Critical 16–18**. Remember the rule: *any dimension = 3 adds the specialist review and the Enhanced clause set without changing the tier* — the tier itself is set by the total.
 4. List the complete required reviews and the full applicable clause sets, not just highlights.
 5. Add a row to the Examples table in [README.md](README.md).
-6. Verify the tier, reviews, and clause sets against the [calculator](https://delschlangen.github.io/vendor-risk-rubric/) (or against an existing preset) before submitting.
+6. Verify the tier, reviews, and clause sets against the [calculator](https://delschlangen.com/) (or against an existing preset) before submitting.
 
 Use fictional vendors only — no real company names or real assessment data.
 
@@ -72,6 +72,7 @@ Clauses live in [`clauses/contract_clauses.md`](clauses/contract_clauses.md). Fo
 - [ ] Move `Unreleased` entries in [CHANGELOG.md](CHANGELOG.md) to a new version section with today's date.
 - [ ] Bump `version` and `date-released` in [CITATION.cff](CITATION.cff).
 - [ ] Bump the `FRAMEWORK` version constant, the footer, and the JSON-LD `dateModified`/`softwareVersion` in `docs/index.html`.
+- [ ] **Bump the `?v=` cache-busting query on `styles.css` and `app.js`** in `docs/index.html` and `docs/404.html`. GitHub Pages serves these assets with long cache lifetimes, so without a new query string returning visitors get new HTML against a stale stylesheet — the page renders with unstyled utility classes (visible skip link, leaked screen-reader text) and a broken layout.
 - [ ] Update `lastmod` in `docs/sitemap.xml`.
 - [ ] Bump each changed document's Version History table.
 - [ ] Tag `vX.Y.Z` and publish a GitHub Release pointing at the CHANGELOG section.

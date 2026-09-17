@@ -20,7 +20,7 @@
         version: '1.1.0',
         released: '2026-09-15',
         repo: 'https://github.com/delschlangen/vendor-risk-rubric',
-        url: 'https://delschlangen.github.io/vendor-risk-rubric/'
+        url: 'https://delschlangen.com/'
     };
 
     const DOCS = {

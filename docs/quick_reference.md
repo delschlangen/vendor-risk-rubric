@@ -2,7 +2,7 @@
 
 *Last reviewed: 2026-09-15 · Framework v1.1.0*
 
-*Print this one-pager — or use the calculator at https://delschlangen.github.io/vendor-risk-rubric/*
+*Print this one-pager — or use the calculator at https://delschlangen.com/*
 
 ---
 
@@ -100,6 +100,6 @@ Steps 1–5 are automated by the calculator, which also exports the filled asses
 
 ---
 
-[Full rubric](../rubric/risk_rubric.md) · [Decision tree](../rubric/decision_tree.md) · [Clause library](../clauses/contract_clauses.md) · [Assessment template](../templates/blank_assessment.md) · [Calculator guide](calculator_guide.md) · Calculator: https://delschlangen.github.io/vendor-risk-rubric/
+[Full rubric](../rubric/risk_rubric.md) · [Decision tree](../rubric/decision_tree.md) · [Clause library](../clauses/contract_clauses.md) · [Assessment template](../templates/blank_assessment.md) · [Calculator guide](calculator_guide.md) · Calculator: https://delschlangen.com/
 
 *Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*
