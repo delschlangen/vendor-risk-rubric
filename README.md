@@ -2,9 +2,9 @@
 
 *Third-party risk management (TPRM) · supplier due diligence · vendor onboarding · contract risk · AI vendor governance*
 
-[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Calculator-blue?style=for-the-badge)](https://delschlangen.com/)
+[![Try It Live](https://img.shields.io/badge/Try%20It%20Live-Calculator-blue?style=for-the-badge)](https://delschlangen.com/vendor-risk-rubric/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Docs-GitHub%20Pages-blue?style=flat-square)](https://delschlangen.com/)
+[![GitHub Pages](https://img.shields.io/badge/Docs-GitHub%20Pages-blue?style=flat-square)](https://delschlangen.com/vendor-risk-rubric/)
 [![Version 1.1.0](https://img.shields.io/badge/version-1.1.0-informational)](CHANGELOG.md)
 [![Cite](https://img.shields.io/badge/cite-CITATION.cff-blue)](CITATION.cff)
 
@@ -12,9 +12,9 @@
 
 Assess vendors across six risk dimensions — co-employment, data sensitivity, physical safety, site access, business continuity, and AI/ML risk — with a scored rubric that determines review pathways and required contract protections. Aligned with the NIST Cybersecurity Framework, ISO/IEC 27001, the NIST AI Risk Management Framework, and regulatory requirements including GDPR, HIPAA, CCPA, SOX, and the EU AI Act.
 
-> **[Use the interactive calculator →](https://delschlangen.com/)** — No installation required. Score vendors directly in your browser.
+> **[Use the interactive calculator →](https://delschlangen.com/vendor-risk-rubric/)** — No installation required. Score vendors directly in your browser.
 
-[![Screenshot of the Vendor Risk Assessment Calculator: six dimensions, four risk tiers](docs/og-image.png)](https://delschlangen.com/)
+[![Screenshot of the Vendor Risk Assessment Calculator: six dimensions, four risk tiers](docs/og-image.png)](https://delschlangen.com/vendor-risk-rubric/)
 
 ---
 
@@ -62,7 +62,7 @@ Status: actively maintained — last reviewed 2026-09-15.
 
 ### Using the calculator
 
-The [interactive calculator](https://delschlangen.com/) mirrors the rubric and decision tree:
+The [interactive calculator](https://delschlangen.com/vendor-risk-rubric/) mirrors the rubric and decision tree:
 
 - **Share links** — Every assessment encodes into the URL; use *Copy link* to share a scored assessment with reviewers or attach it to a ticket. Drafts also autosave in your browser.
 - **Example presets** — Load any of the four worked examples with one click to see how scoring plays out.
@@ -239,7 +239,7 @@ Use the structured issue forms to get started: [Report a calculator bug](https:/
 
 Use the interactive risk calculator directly in your browser:
 
-**https://delschlangen.com/**
+**https://delschlangen.com/vendor-risk-rubric/**
 
 No installation or dependencies required. Score vendors, see required reviews, and get contract clause recommendations instantly.
 

@@ -21,7 +21,7 @@
 
 ## Risk Scoring
 
-Tip: score with the [interactive calculator](https://delschlangen.com/), then Download .md and paste or attach; record justifications below.
+Tip: score with the [interactive calculator](https://delschlangen.com/vendor-risk-rubric/), then Download .md and paste or attach; record justifications below.
 
 ### 1. Co-Employment Risk
 

@@ -21,7 +21,7 @@ For anything larger than a typo fix, open an issue first using the matching [iss
 3. Compute the tier from the total: **Standard 0–5, Enhanced 6–10, High 11–15, Critical 16–18**. Remember the rule: *any dimension = 3 adds the specialist review and the Enhanced clause set without changing the tier* — the tier itself is set by the total.
 4. List the complete required reviews and the full applicable clause sets, not just highlights.
 5. Add a row to the Examples table in [README.md](README.md).
-6. Verify the tier, reviews, and clause sets against the [calculator](https://delschlangen.com/) (or against an existing preset) before submitting.
+6. Verify the tier, reviews, and clause sets against the [calculator](https://delschlangen.com/vendor-risk-rubric/) (or against an existing preset) before submitting.
 
 Use fictional vendors only — no real company names or real assessment data.
 
