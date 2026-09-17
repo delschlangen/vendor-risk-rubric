@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Try the calculator
+    url: https://delschlangen.github.io/vendor-risk-rubric/
+    about: Score a vendor in your browser — no installation required.
+  - name: Read the FAQ
+    url: https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/faq.md
+    about: Common questions about scoring, tiers, and adoption.
+  - name: Report a security issue privately
+    url: https://github.com/delschlangen/vendor-risk-rubric/blob/main/SECURITY.md
+    about: See the security policy for private reporting instructions.

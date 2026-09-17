@@ -1,0 +1,65 @@
+name: Calculator bug report
+description: Report a problem with the interactive risk calculator (docs/index.html).
+title: "[Bug]: "
+labels:
+  - bug
+  - calculator
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a calculator bug. The calculator is expected to match
+        [rubric/risk_rubric.md](https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/risk_rubric.md)
+        and [rubric/decision_tree.md](https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/decision_tree.md) exactly.
+  - type: dropdown
+    id: where-opened
+    attributes:
+      label: Where opened
+      description: How were you running the calculator when the bug occurred?
+      options:
+        - GitHub Pages (delschlangen.github.io)
+        - file:// (opened locally)
+        - Self-hosted copy
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: e.g. Firefox 131, Chrome 129, Safari 18
+    validations:
+      required: true
+  - type: input
+    id: share-link
+    attributes:
+      label: Assessment link
+      description: Paste the "Copy link" URL if possible — it encodes your exact scores and inputs.
+      placeholder: https://delschlangen.github.io/vendor-risk-rubric/#...
+  - type: textarea
+    id: scores
+    attributes:
+      label: Dimension scores you set
+      description: "Six numbers 0–3 in order: Co-Employment, Data, Safety, Access, Continuity, AI/ML."
+      placeholder: "e.g. 1, 3, 0, 2, 1, 2"
+    validations:
+      required: true
+  - type: textarea
+    id: expected-vs-actual
+    attributes:
+      label: Expected tier / reviews / clauses vs actual
+      description: What tier, required reviews, and clause sets did you expect, and what did the calculator show instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the calculator
+        2. ...
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I checked rubric/risk_rubric.md and rubric/decision_tree.md and the expected result matches them

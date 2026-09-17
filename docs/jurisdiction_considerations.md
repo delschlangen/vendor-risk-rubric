@@ -1,12 +1,16 @@
 # Jurisdiction & Regulatory Considerations
 
-Legal and regulatory requirements that affect vendor risk assessments based on jurisdiction and industry. Use this guide alongside the risk rubric to ensure compliance obligations are addressed.
+*Last reviewed: 2026-09-15 · Framework v1.1.0 · Not legal advice — verify against the primary sources in §9 before relying on this guide.*
+
+Legal and regulatory requirements that affect vendor risk assessments based on jurisdiction and industry. Use this guide alongside the [risk rubric](../rubric/risk_rubric.md) to ensure compliance obligations are addressed. Sample clauses in this guide supplement the [contract clause library](../clauses/contract_clauses.md).
 
 ---
 
 ## 1. EU AI Act
 
-The EU AI Act creates supply chain obligations for organizations using AI systems from vendors. These requirements affect how you assess and contract with AI vendors.
+The EU AI Act ([Regulation (EU) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)) creates supply chain obligations for organizations using AI systems from vendors. These requirements affect how you assess and contract with AI vendors.
+
+**Applicability:** the Act's obligations phase in over time and the schedule may change — check the current applicability dates for each obligation on [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) before relying on any deadline. Treat the contract clauses in this section as leading practice regardless of when a given obligation formally applies.
 
 ### When AI/ML Dimension Triggers High-Risk Classification
 
@@ -22,7 +26,7 @@ Under Article 6, AI systems are classified as **high-risk** when used in these a
 | Migration & border | Visa processing, asylum applications, border surveillance |
 | Justice | Sentencing assistance, parole decisions, evidence evaluation |
 
-**Assessment trigger:** If your AI/ML dimension score is 2+ AND the vendor's AI is used in any high-risk category above, additional EU AI Act requirements apply.
+**Assessment trigger:** If your [AI/ML dimension score](../rubric/risk_rubric.md) is 2+ AND the vendor's AI is used in any high-risk category above, additional EU AI Act requirements apply.
 
 ### Supply Chain Obligations for High-Risk AI
 
@@ -72,7 +76,7 @@ A **Data Processing Agreement (DPA)** is legally required when:
 | Vendor only processes anonymized/aggregated data | No |
 | Vendor is a joint controller (co-determines purposes) | No — requires Joint Controller Agreement instead |
 
-**Assessment trigger:** If Data Sensitivity dimension is 2+ AND data includes EU residents, a DPA is mandatory under GDPR Article 28.
+**Assessment trigger:** If the [Data Sensitivity dimension](../rubric/risk_rubric.md) is 2+ AND data includes EU residents, a DPA is mandatory under GDPR Article 28.
 
 ### Controller vs Processor Classification
 
@@ -100,6 +104,8 @@ When vendor transfers EU personal data outside the EEA:
 | **US** (post-DPF) | Data Privacy Framework certification OR SCCs |
 | **US** (no DPF) | Standard Contractual Clauses (SCCs) + Transfer Impact Assessment |
 | **Other countries** | SCCs + Transfer Impact Assessment |
+
+**Status:** before relying on a DPF certification, confirm the adequacy decision's current status on the [Commission's adequacy decisions page](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en) and the CJEU docket. Contract posture: accept DPF certification but also execute the 2021 SCCs ([Decision (EU) 2021/914](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en)) as a fallback, with a transfer impact assessment.
 
 **Required contract clause for transfers:**
 
@@ -164,6 +170,10 @@ When vendors may receive data subject to opt-out:
 **Contract clause for opt-out compliance:**
 > Vendor shall implement mechanisms to receive and honor opt-out preference signals, including Global Privacy Control (GPC). Vendor shall not process Personal Information of consumers who have opted out of sale/sharing for purposes that would constitute a sale or sharing under CPRA.
 
+### Other US state privacy laws
+
+Several other US states have enacted comprehensive privacy laws with their own processor-contract requirements. Generalize the clause in this section to "applicable US state privacy law" and confirm the applicable statutes for the residents involved ([IAPP US State Privacy Legislation Tracker](https://iapp.org/resources/article/us-state-privacy-legislation-tracker/)).
+
 ---
 
 ## 4. Sector-Specific Requirements
@@ -182,7 +192,9 @@ When vendors access Protected Health Information (PHI), HIPAA requires a **Busin
 | Only handles de-identified data | No |
 | Acts as a conduit (transmission only, no storage) | No |
 
-**Assessment trigger:** If Data Sensitivity = 3 AND data includes health information, a BAA is required.
+**Assessment trigger:** If [Data Sensitivity](../rubric/risk_rubric.md) = 3 AND data includes health information, a BAA is required.
+
+**Status:** proposed changes to the HIPAA Security Rule were pending as of the last review of this guide — check [HHS OCR](https://www.hhs.gov/hipaa/for-professionals/index.html) for the current status of the rules before relying on the detail below.
 
 **BAA Required Terms:**
 
@@ -242,7 +254,9 @@ Gramm-Leach-Bliley Act applies when vendors access consumer financial informatio
 | Loan application data | Yes |
 | Aggregated/anonymized financial data | No |
 
-**Assessment trigger:** If Data Sensitivity = 2+ AND you are a financial institution AND vendor accesses consumer financial data.
+**Assessment trigger:** If [Data Sensitivity](../rubric/risk_rubric.md) = 2+ AND you are a financial institution AND vendor accesses consumer financial data.
+
+**Status:** check the [FTC Safeguards Rule page](https://www.ftc.gov/legal-library/browse/rules/safeguards-rule) (16 CFR Part 314) for the current requirements, including breach-notification duties and service-provider oversight (§ 314.4(f)).
 
 **GLBA Contract Requirements:**
 
@@ -256,6 +270,21 @@ Under the Safeguards Rule, contracts with service providers must:
 
 **Sample GLBA clause:**
 > Vendor shall implement and maintain a comprehensive information security program with administrative, technical, and physical safeguards designed to: (a) ensure the security and confidentiality of customer information; (b) protect against anticipated threats or hazards; (c) protect against unauthorized access or use. Vendor's program shall comply with the FTC Safeguards Rule (16 CFR Part 314).
+
+### DORA — EU Financial Sector ICT Third-Party Risk
+
+The Digital Operational Resilience Act ([Regulation (EU) 2022/2554](https://eur-lex.europa.eu/eli/reg/2022/2554/oj)) has applied to EU financial entities since **17 January 2025**. It is the most prescriptive vendor-contract regime in this guide.
+
+**Assessment trigger:** You are an EU-regulated financial entity AND the vendor provides ICT services (cloud, software, data, network, managed services). If the service supports a **critical or important function**, the enhanced Art. 30(3) terms apply. (See the [risk rubric](../rubric/risk_rubric.md) Data Sensitivity and Business Continuity dimensions.)
+
+| DORA obligation | What it means for vendor assessments |
+|-----------------|--------------------------------------|
+| Register of information (Art. 28(3); ITS (EU) 2024/2956) | Maintain a register of information on all ICT third-party arrangements; financial entities filed their first registers via national authorities in [April 2025](https://www.cssf.lu/en/2025/04/dora-submission-timeframe-for-register-of-information-edesk-portal-open-as-of-1-april-2025/) with a 31 March 2025 reference date |
+| ICT third-party risk management & contractual provisions (Arts. 28–30) | Manage ICT third-party risk and put the required contractual provisions in writing — Art. 30(2) applies to all ICT contracts, and Art. 30(3) adds enhanced terms for services supporting critical or important functions. See the regulation text for the required contract terms |
+| Critical ICT third-party providers (Arts. 31–44) | On **[18 Nov 2025](https://www.eiopa.europa.eu/european-supervisory-authorities-designate-critical-ict-third-party-providers-under-digital-2025-11-18_en)** the ESAs designated the first **19 critical ICT third-party providers** (including AWS, Google Cloud and Microsoft) for direct oversight — check whether a vendor is a designated CTPP |
+
+**DORA-aligned clause (critical/important functions):**
+> Vendor shall grant Company, its auditors and its competent authorities unrestricted rights of access, inspection and audit; shall cooperate in threat-led penetration testing; shall notify Company of any development that may materially affect its ability to provide the services; shall not sub-contract a material part of the services supporting Company's critical or important functions without Company's prior written approval; and, on termination for any reason, shall continue to provide the services for a transition period of not less than [12] months and support orderly migration to Company or a replacement provider.
 
 ---
 
@@ -271,6 +300,7 @@ Use this matrix to identify which requirements apply:
 | Protected health information | HIPAA-covered operations | BAA |
 | Financial reporting data | Public company status | SOX controls + SOC 1 |
 | Consumer financial information | Financial institution status | GLBA safeguards clause |
+| ICT services (cloud, software, data, managed services) | EU-regulated financial entity | DORA Art. 30 contractual provisions; register of information entry; exit strategy for critical/important functions |
 
 ---
 
@@ -302,8 +332,52 @@ For high-risk AI systems under EU AI Act:
 
 ---
 
-## 7. Version History
+## 7. Related Documents
+
+[Risk rubric](../rubric/risk_rubric.md) · [Decision tree](../rubric/decision_tree.md) · [Contract clause library](../clauses/contract_clauses.md) · [Blank assessment (jurisdiction addenda)](../templates/blank_assessment.md) · [Calculator guide](calculator_guide.md)
+
+---
+
+## 8. Regulatory Watch-List & Review Cadence
+
+Areas to monitor. Re-verify each before relying on the corresponding section.
+
+| Regulation | Why it matters here / what to re-verify | Dimension | Check frequency |
+|------------|------------------------------------------|-----------|-----------------|
+| EU AI Act | Verify current applicability dates and Commission guidance on [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) | AI/ML | Semi-annual |
+| GDPR | Monitor EU legislative proposals and EDPB guidance ([EDPB news](https://www.edpb.europa.eu/news_en)) | Data | Semi-annual |
+| EU–US DPF | Verify the adequacy decision's current status ([Commission adequacy decisions](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en)) before relying on DPF certification | Data | Semi-annual |
+| CCPA/CPRA regulations | Monitor CPPA rulemaking at [cppa.ca.gov](https://cppa.ca.gov/regulations/) | Data / AI/ML | Semi-annual |
+| HIPAA Security Rule | Proposed changes were pending at last review — check HHS OCR for current status | Data | Semi-annual |
+| GLBA Safeguards Rule | Monitor for FTC amendments | Data | Annual |
+| DORA | RTS updates; CTPP designation list | Continuity / Access | Semi-annual |
+| US state AI laws | Rapidly changing — verify each state's status before relying | AI/ML | Semi-annual |
+| Standards | NIST CSF 2.0, NIST AI RMF 1.0 / AI 600-1, ISO/IEC 27001:2022, ISO/IEC 42001:2023 | All | Annual |
+
+**Review cadence:** review this guide semi-annually; conduct an immediate review on any major enforcement action or new adequacy decision.
+
+---
+
+## 9. Sources & Further Reading
+
+**Primary law and regulators:**
+- EU AI Act — [Regulation (EU) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) (check EUR-Lex for the current applicability dates)
+- GDPR — [Regulation (EU) 2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj); [EDPB guidelines](https://www.edpb.europa.eu/our-work-tools/general-guidance/guidelines-recommendations-best-practices_en); [Commission adequacy decisions](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en); [Standard Contractual Clauses](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en)
+- DORA — [Regulation (EU) 2022/2554](https://eur-lex.europa.eu/eli/reg/2022/2554/oj); [CSSF register-of-information submission timeframe](https://www.cssf.lu/en/2025/04/dora-submission-timeframe-for-register-of-information-edesk-portal-open-as-of-1-april-2025/); [ESAs sub-outsourcing RTS final report](https://www.eiopa.europa.eu/esas-publish-joint-final-report-draft-technical-standards-subcontracting-under-dora-2024-07-26_lt); [ESAs CTPP designations, 18 Nov 2025](https://www.eiopa.europa.eu/european-supervisory-authorities-designate-critical-ict-third-party-providers-under-digital-2025-11-18_en)
+- HIPAA — [HHS OCR sample BAA provisions](https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html)
+- GLBA — [FTC Safeguards Rule](https://www.ftc.gov/legal-library/browse/rules/safeguards-rule); [16 CFR Part 314 (eCFR)](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314)
+- SOX — [SEC rules & regulations](https://www.sec.gov/rules-regulations); [PCAOB AS 2601](https://pcaobus.org/oversight/standards/auditing-standards/details/AS2601)
+- California — [CPPA regulations](https://cppa.ca.gov/regulations/)
+
+**Analysis and trackers:**
+- [IAPP — US State Privacy Legislation Tracker](https://iapp.org/resources/article/us-state-privacy-legislation-tracker/)
+- [EDPB — news](https://www.edpb.europa.eu/news_en)
+
+---
+
+## 10. Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial release |
+| 1.1 | 2026-09 | Added DPF/HIPAA/GLBA status pointers, DORA section, other-US-state note, watch-list and sources; 'Last reviewed' marker |

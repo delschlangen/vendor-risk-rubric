@@ -1,0 +1,63 @@
+name: Content correction
+description: Propose a fix to a document — wording, scores, internal consistency, or factual accuracy.
+title: "[Content]: "
+labels:
+  - content
+  - needs-citation
+body:
+  - type: dropdown
+    id: document
+    attributes:
+      label: Document
+      description: Which file needs the correction?
+      options:
+        - README.md
+        - rubric/risk_rubric.md
+        - rubric/decision_tree.md
+        - clauses/contract_clauses.md
+        - templates/blank_assessment.md
+        - templates/intake_questionnaire.md
+        - examples/filled_example.md
+        - examples/staffing_agency.md
+        - examples/low_risk_saas.md
+        - examples/construction_vendor.md
+        - docs/calculator_guide.md
+        - docs/quick_reference.md
+        - docs/adoption_guide.md
+        - docs/raci_matrix.md
+        - docs/jurisdiction_considerations.md
+        - docs/executive_summary.md
+        - docs/faq.md
+        - Other / multiple documents
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Section / heading
+      placeholder: e.g. "Dimension 2 — Data Sensitivity & Privacy, score 2"
+  - type: textarea
+    id: current-text
+    attributes:
+      label: Current text
+      description: Quote the text as it stands today.
+  - type: textarea
+    id: proposed-text
+    attributes:
+      label: Proposed text
+      description: The exact replacement wording you propose.
+    validations:
+      required: true
+  - type: textarea
+    id: citation
+    attributes:
+      label: Citation or authority
+      description: URL, standard clause, or statute that supports the correction.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand clauses are illustrative and not legal advice

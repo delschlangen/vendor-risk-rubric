@@ -1,5 +1,7 @@
 # RACI Matrix
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 Who is **R**esponsible, **A**ccountable, **C**onsulted, and **I**nformed for each step of the vendor risk assessment process.
 
 ---
@@ -18,13 +20,13 @@ Who is **R**esponsible, **A**ccountable, **C**onsulted, and **I**nformed for eac
 
 ## Core Process RACI
 
-| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | Exec Sponsor |
-|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------------|
-| Identify vendor need | R/A | I | — | — | — | — | — | — | — |
-| Complete intake questionnaire | R | I | A | — | — | — | — | — | — |
-| Initial risk scoring | I | C | R/A | — | — | — | — | — | — |
-| Determine review tier | I | I | R/A | — | — | — | — | — | — |
-| Route to reviewers | I | R | A | I | I | I | I | I | I |
+| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | AI Gov | Emp. Counsel | Exec Sponsor |
+|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------|--------------|--------------|
+| Identify vendor need | R/A | I | — | — | — | — | — | — | — | — | — |
+| Complete intake questionnaire | R | I | A | — | — | — | — | — | — | — | — |
+| Initial risk scoring | I | C | R/A | — | — | — | — | — | — | — | — |
+| Determine review tier | I | I | R/A | — | — | — | — | — | — | — | — |
+| Route to reviewers | I | R | A | I | I | I | I | I | I | I | I |
 
 ---
 
@@ -41,30 +43,33 @@ Who is **R**esponsible, **A**ccountable, **C**onsulted, and **I**nformed for eac
 
 ### Enhanced Tier (Score 6–10)
 
-| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | Exec Sponsor |
-|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------------|
-| Security assessment | C | I | C | — | R/A | — | — | — | — |
-| Legal contract review | C | C | I | R/A | C | C | — | — | — |
-| Privacy review (if Data ≥ 2) | C | I | C | C | — | R/A | — | — | — |
-| Incorporate required clauses | I | R | C | A | C | C | — | — | — |
-| Budget approval | R | I | — | — | — | — | — | A | — |
-| Final contract review | I | C | I | R/A | — | — | — | — | — |
-| Contract execution | I | R/A | I | I | I | I | — | — | — |
+| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | AI Gov | Emp. Counsel | Exec Sponsor |
+|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------|--------------|--------------|
+| Security assessment | C | I | C | — | R/A | — | — | — | — | — | — |
+| Legal contract review | C | C | I | R/A | C | C | — | — | — | — | — |
+| Privacy review (if Data ≥ 2) | C | I | C | C | — | R/A | — | — | — | — | — |
+| Incorporate required clauses | I | R | C | A | C | C | — | — | — | — | — |
+| Budget approval | R | I | — | — | — | — | — | A | — | — | — |
+| Final contract review | I | C | I | R/A | — | — | — | — | — | — | — |
+| Contract execution | I | R/A | I | I | I | I | — | — | — | — | — |
 
 ### High/Critical Tier (Score 11+)
 
-| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | Exec Sponsor |
-|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------------|
-| Identify executive sponsor | R | I | C | — | — | — | — | — | A |
-| Full security assessment | C | I | C | — | R/A | — | — | — | I |
-| Custom contract negotiation | C | C | C | R/A | C | C | C | C | I |
-| Data Protection Impact Assessment | C | I | C | C | C | R/A | — | — | I |
-| Vendor financial review | I | C | C | — | — | — | — | R/A | I |
-| Business continuity plan review | C | C | R/A | — | — | — | — | C | I |
-| AI/ML risk review (if applicable) | C | I | R/A | C | C | — | — | — | I |
-| Executive sign-off | I | I | C | C | C | C | C | C | R/A |
-| Contract execution | I | R/A | I | I | I | I | I | I | I |
-| Add to monitoring program | I | I | R/A | — | C | C | — | — | I |
+| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | AI Gov | Emp. Counsel | Exec Sponsor |
+|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------|--------------|--------------|
+| Identify executive sponsor | R | I | C | — | — | — | — | — | — | — | A |
+| Full security assessment | C | I | C | — | R/A | — | — | — | — | — | I |
+| Custom contract negotiation | C | C | C | R/A | C | C | C | C | C | C | I |
+| Data Protection Impact Assessment | C | I | C | C | C | R/A | — | — | — | — | I |
+| Vendor financial review | I | C | C | — | — | — | — | R/A | — | — | I |
+| Business continuity plan review | C | C | R/A | — | — | — | — | C | — | — | I |
+| AI/ML risk review (if AI/ML ≥ 2) | C | I | C | C | C | — | — | — | R/A | — | I |
+| Executive sign-off | I | I | C | C | C | C | C | C | C | C | R/A |
+| C-suite approval (Critical only)* | I | I | C | C | C | — | — | C | — | — | R |
+| Contract execution | I | R/A | I | I | I | I | I | I | I | I | I |
+| Add to monitoring program | I | I | R/A | — | C | C | — | — | C | — | I |
+
+\* C-suite is the approver (A) for Critical-tier vendors (see Decision Authority); the Exec Sponsor is Responsible for presenting the case.
 
 ---
 
@@ -85,13 +90,14 @@ When a single dimension scores **3**, the following specialist reviews are trigg
 
 ## Ongoing Monitoring RACI
 
-| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | Finance | Exec Sponsor |
-|----------|-----------|-------------|-----------------|-------|---------|---------|---------|--------------|
-| Annual security attestation | — | I | C | — | R/A | — | — | — |
-| Annual re-scoring at renewal | C | R | A | — | C | C | — | — |
-| Quarterly business review (High/Critical) | C | C | R/A | — | C | — | C | I |
-| Exception requests | R | C | A | C | C | — | — | A |
-| Incident response (vendor breach) | I | C | R/A | R | R | R | — | I |
+| Activity | Requestor | Procurement | Risk/Compliance | Legal | InfoSec | Privacy | EHS | Finance | Exec Sponsor |
+|----------|-----------|-------------|-----------------|-------|---------|---------|-----|---------|--------------|
+| Annual security attestation | — | I | C | — | R/A | — | — | — | — |
+| Annual certificate of insurance / safety program check | — | I | C | — | — | — | R/A | — | — |
+| Annual re-scoring at renewal | C | R | A | — | C | C | — | — | — |
+| Quarterly business review (High/Critical) | C | C | R/A | — | C | — | — | C | I |
+| Exception requests | R | C | R | C | C | — | — | — | A |
+| Incident response (vendor breach) | I | C | R/A | R | R | R | — | — | I |
 
 ---
 
@@ -107,6 +113,8 @@ When a single dimension scores **3**, the following specialist reviews are trigg
 | **Privacy** | Privacy officer, DPO | Reviews data handling; assesses privacy impact |
 | **EHS** | Safety manager, EHS coordinator | Reviews physical safety; verifies insurance |
 | **Finance** | Financial analyst, Controller | Reviews vendor financial health; budget approval |
+| **AI Governance** | AI ethics committee, ML risk lead | Reviews model documentation, training data, bias testing, human oversight |
+| **Employment Counsel** | Employment lawyer (in-house or outside) | Worker-classification analysis and SOW structure when Co-Employment = 3 |
 | **Exec Sponsor** | VP, Director, C-level | Provides business sponsorship; accepts residual risk |
 
 ---
@@ -115,7 +123,7 @@ When a single dimension scores **3**, the following specialist reviews are trigg
 
 1. **Map to your org structure** — Replace role names with actual team names
 2. **Combine roles if needed** — Smaller orgs may combine Risk/Compliance + Procurement
-3. **Add roles if needed** — Consider adding AI Governance, ESG, or Geographic Risk reviewers
+3. **Add roles if needed** — AI Governance and Employment Counsel are built into the matrix; consider adding ESG or Geographic Risk reviewers
 4. **Document escalation paths** — Define who decides when reviewers disagree
 
 ---
@@ -130,3 +138,10 @@ When a single dimension scores **3**, the following specialist reviews are trigg
 | Critical tier approval | C-suite |
 | Exceptions to process | Executive Sponsor + Risk/Compliance |
 | Framework changes | Risk/Compliance + Legal |
+
+---
+
+Related documents: [Decision tree §1–§4](../rubric/decision_tree.md) · [Required Reviews table in the blank assessment](../templates/blank_assessment.md) · [Rubric triggers](../rubric/risk_rubric.md)
+
+---
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

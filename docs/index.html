@@ -3,206 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendor Risk Assessment Calculator</title>
+    <title>Third-Party Vendor Risk Assessment Calculator (Free)</title>
+    <meta name="description" content="Free open-source tool to score third-party vendors on 6 risk dimensions, including AI/ML, and get the risk tier, required reviews and contract clauses.">
+    <link rel="canonical" href="https://delschlangen.github.io/vendor-risk-rubric/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Del Schlangen">
+    <meta name="theme-color" content="#1e3a5f">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vendor Risk Assessment Framework">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://delschlangen.github.io/vendor-risk-rubric/">
+    <meta property="og:title" content="Vendor Risk Assessment Calculator">
+    <meta property="og:description" content="Score third-party vendors on 6 risk dimensions, including AI/ML, and instantly see the risk tier, required reviews and contract clauses. Free and open source.">
+    <meta property="og:image" content="https://delschlangen.github.io/vendor-risk-rubric/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Vendor Risk Assessment Calculator: six risk dimensions scored 0-3, four risk tiers from Standard to Critical">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vendor Risk Assessment Calculator">
+    <meta name="twitter:description" content="Free open-source calculator: score vendors on 6 risk dimensions and get the risk tier, reviews and contract clauses.">
+    <meta name="twitter:image" content="https://delschlangen.github.io/vendor-risk-rubric/og-image.png">
+    <meta name="twitter:image:alt" content="Vendor Risk Assessment Calculator preview">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Vendor Risk Assessment Calculator",
+        "url": "https://delschlangen.github.io/vendor-risk-rubric/",
+        "description": "Score third-party vendors on 6 risk dimensions, including AI/ML, and instantly see the risk tier, required reviews and contract clauses. Free and open source.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "license": "https://github.com/delschlangen/vendor-risk-rubric/blob/main/LICENSE",
+        "softwareVersion": "1.1.0",
+        "datePublished": "2024-12-25",
+        "dateModified": "2026-09-15",
+        "image": "https://delschlangen.github.io/vendor-risk-rubric/og-image.png",
+        "screenshot": "https://delschlangen.github.io/vendor-risk-rubric/og-image.png",
+        "keywords": "vendor risk assessment, third-party risk management, TPRM, vendor risk calculator, AI vendor risk, vendor due diligence, contract clauses, procurement risk",
+        "sameAs": "https://github.com/delschlangen/vendor-risk-rubric",
+        "author": {
+            "@type": "Person",
+            "name": "Del Schlangen",
+            "sameAs": [
+                "https://orcid.org/0009-0005-5116-9564",
+                "https://github.com/delschlangen",
+                "https://linkedin.com/in/del-s-759557175/"
+            ]
+        }
+    }
+    </script>
+    <script>
+    (function () {
+        try {
+            var t = localStorage.getItem('vrr.theme');
+            if (t === 'dark' || t === 'light') {
+                document.documentElement.setAttribute('data-theme', t);
+            }
+        } catch (e) { /* storage unavailable; fall back to OS preference */ }
+    })();
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to calculator</a>
     <header>
         <div class="container">
             <h1>Vendor Risk Assessment Calculator</h1>
+            <p class="print-only print-stamp">Vendor Risk Assessment Framework <span class="fw-version">v1.1.0</span> &middot; Generated <span id="printDate"></span> &middot; <span id="printLink"></span></p>
             <p class="subtitle">Score vendors across 6 risk dimensions to determine review requirements and contract protections</p>
-            <a href="https://github.com/delschlangen/vendor-risk-rubric" class="github-link" target="_blank" rel="noopener">
-                <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                </svg>
-                View on GitHub
-            </a>
+            <div class="header-actions">
+                <a href="https://github.com/delschlangen/vendor-risk-rubric" class="github-link" target="_blank" rel="noopener">
+                    <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    View the vendor risk framework on GitHub<span class="sr-only"> (opens in new tab)</span>
+                </a>
+                <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">Dark mode</button>
+            </div>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main">
+        <!-- Draft restore banner -->
+        <div id="draftBanner" class="draft-banner" role="status" hidden>
+            <span class="draft-text">Unsaved assessment from <time id="draftTime"></time></span>
+            <button type="button" class="btn btn-small" id="restoreDraft">Restore</button>
+            <button type="button" class="btn btn-small" id="discardDraft">Discard</button>
+        </div>
+
+        <!-- Assessment Metadata -->
+        <section class="meta-card" id="assessmentMeta" aria-labelledby="metaHeading">
+            <h2 id="metaHeading">Assessment details</h2>
+            <div class="meta-grid">
+                <div class="meta-field">
+                    <label for="metaVendor">Vendor name</label>
+                    <input type="text" id="metaVendor" data-field="vendor" placeholder="Vendor name" autocomplete="organization">
+                </div>
+                <div class="meta-field">
+                    <label for="metaService">Service / product</label>
+                    <input type="text" id="metaService" data-field="service" placeholder="Service / product">
+                </div>
+                <div class="meta-field">
+                    <label for="metaRequestor">Requestor</label>
+                    <input type="text" id="metaRequestor" data-field="requestor" placeholder="Requestor">
+                </div>
+                <div class="meta-field">
+                    <label for="metaDepartment">Department</label>
+                    <input type="text" id="metaDepartment" data-field="department" placeholder="Department">
+                </div>
+                <div class="meta-field">
+                    <label for="metaAssessor">Assessor</label>
+                    <input type="text" id="metaAssessor" data-field="assessor" placeholder="Assessor">
+                </div>
+                <div class="meta-field">
+                    <label for="metaDate">Assessment date</label>
+                    <input type="date" id="metaDate" data-field="date">
+                </div>
+                <div class="meta-field meta-field-full">
+                    <label for="metaOverview">Vendor overview</label>
+                    <textarea id="metaOverview" data-field="overview" rows="2" placeholder="Vendor overview: what they do, why we need them"></textarea>
+                </div>
+            </div>
+            <p class="meta-hint">Nothing you type leaves your browser; use Copy link or Export to share.</p>
+        </section>
+
         <!-- Risk Tier Display -->
-        <section class="tier-display" id="tierDisplay">
-            <div class="tier-badge" id="tierBadge">
-                <span class="tier-label">Risk Tier</span>
-                <span class="tier-name" id="tierName">Standard</span>
+        <section class="tier-display" id="tierDisplay" aria-labelledby="tierHeading">
+            <div class="tier-main">
+                <div class="tier-badge" id="tierBadge">
+                    <h2 class="tier-label" id="tierHeading">Risk Tier</h2>
+                    <span class="tier-name" id="tierName">Standard</span>
+                </div>
+                <div class="score-display">
+                    <span class="score-value" id="totalScore">0</span>
+                    <span class="score-label">/ 18</span>
+                    <span class="tier-vendor" id="tierVendor"></span>
+                </div>
             </div>
-            <div class="score-display">
-                <span class="score-value" id="totalScore">0</span>
-                <span class="score-label">/ 18</span>
-            </div>
+            <p class="tier-note" id="tierNote" hidden></p>
+            <p class="tier-legend" id="tierLegend">Score 0&ndash;5 Standard &middot; 6&ndash;10 Enhanced &middot; 11&ndash;15 High &middot; 16&ndash;18 Critical. Any dimension scored 3 adds a specialist review and the Enhanced clause set without changing the tier.</p>
+        </section>
+        <p id="liveStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+
+        <!-- Summary -->
+        <section class="summary-card results-section" aria-labelledby="summaryHeading">
+            <h2 id="summaryHeading">Summary</h2>
+            <pre id="summaryText" class="summary-text"></pre>
+            <button type="button" class="btn btn-small" id="copySummaryBtn">Copy summary</button>
         </section>
 
         <!-- Escalation Warnings -->
-        <section class="escalation-warnings" id="escalationWarnings" style="display: none;">
+        <section class="escalation-warnings" id="escalationWarnings" role="region" aria-labelledby="escalationHeading" hidden>
             <div class="warning-header">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                 </svg>
-                <span>Automatic Escalation Triggers</span>
+                <h2 id="escalationHeading">Automatic Escalations Triggered</h2>
             </div>
             <ul id="escalationList"></ul>
         </section>
 
         <!-- Risk Dimensions -->
-        <section class="dimensions">
+        <section class="dimensions" id="dimensionsSection">
             <h2>Risk Dimensions</h2>
 
             <div class="dimension-card" data-dimension="coEmployment">
                 <div class="dimension-header">
-                    <h3>1. Co-Employment Risk</h3>
-                    <span class="dimension-score" id="coEmploymentScore">0</span>
+                    <h3 id="coEmploymentLabel">1. Co-Employment Risk</h3>
+                    <span class="dimension-score" id="coEmploymentScore" aria-hidden="true">0</span>
                 </div>
-                <p class="dimension-desc">Risk that vendor workers could be legally classified as employees</p>
+                <p class="dimension-desc" id="coEmploymentDesc">Risk that vendor workers could be legally classified as employees</p>
                 <div class="slider-container">
-                    <input type="range" min="0" max="3" value="0" class="slider" id="coEmployment">
-                    <div class="slider-labels">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="coEmployment" aria-labelledby="coEmploymentLabel" aria-describedby="coEmploymentDesc">
+                    <div class="slider-labels" aria-hidden="true">
                         <span>0</span><span>1</span><span>2</span><span>3</span>
                     </div>
                 </div>
                 <div class="score-descriptions">
-                    <div class="score-desc" data-score="0"><strong>0:</strong> No vendor personnel on-site; purely transactional (SaaS, product)</div>
-                    <div class="score-desc" data-score="1"><strong>1:</strong> Occasional on-site; vendor-supervised; clear deliverables</div>
-                    <div class="score-desc" data-score="2"><strong>2:</strong> Regular on-site; some team integration; shared tools</div>
-                    <div class="score-desc" data-score="3"><strong>3:</strong> Embedded daily; company directs work; uses company email/badge</div>
+                    <button type="button" class="score-desc" data-score="0" aria-pressed="true"><strong>0:</strong> No vendor personnel on-site; purely transactional (SaaS, product)</button>
+                    <button type="button" class="score-desc" data-score="1" aria-pressed="false"><strong>1:</strong> Occasional on-site; vendor-supervised; clear deliverables</button>
+                    <button type="button" class="score-desc" data-score="2" aria-pressed="false"><strong>2:</strong> Regular on-site; some team integration; shared tools</button>
+                    <button type="button" class="score-desc" data-score="3" aria-pressed="false"><strong>3:</strong> Embedded daily; company directs work; uses company email/badge</button>
                 </div>
+                <button type="button" class="show-all-levels" aria-expanded="false">Show all levels</button>
+                <label class="note-label" for="note-coEmployment">Justification</label>
+                <textarea id="note-coEmployment" class="dim-note" data-dim="coEmployment" rows="2" placeholder="Who directs daily work? How long is the engagement? Do we provide equipment or email?"></textarea>
             </div>
 
             <div class="dimension-card" data-dimension="dataSensitivity">
                 <div class="dimension-header">
-                    <h3>2. Data Sensitivity & Privacy</h3>
-                    <span class="dimension-score" id="dataSensitivityScore">0</span>
+                    <h3 id="dataSensitivityLabel">2. Data Sensitivity &amp; Privacy</h3>
+                    <span class="dimension-score" id="dataSensitivityScore" aria-hidden="true">0</span>
                 </div>
-                <p class="dimension-desc">Risk related to vendor access to sensitive, regulated, or proprietary data</p>
+                <p class="dimension-desc" id="dataSensitivityDesc">Risk related to vendor access to sensitive, regulated, or proprietary data</p>
                 <div class="slider-container">
-                    <input type="range" min="0" max="3" value="0" class="slider" id="dataSensitivity">
-                    <div class="slider-labels">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="dataSensitivity" aria-labelledby="dataSensitivityLabel" aria-describedby="dataSensitivityDesc">
+                    <div class="slider-labels" aria-hidden="true">
                         <span>0</span><span>1</span><span>2</span><span>3</span>
                     </div>
                 </div>
                 <div class="score-descriptions">
-                    <div class="score-desc" data-score="0"><strong>0:</strong> No access to company data</div>
-                    <div class="score-desc" data-score="1"><strong>1:</strong> Internal business data (non-sensitive); no PII</div>
-                    <div class="score-desc" data-score="2"><strong>2:</strong> PII, customer data, or contractually confidential data</div>
-                    <div class="score-desc" data-score="3"><strong>3:</strong> Regulated data (HIPAA, GDPR, financial), trade secrets, source code</div>
+                    <button type="button" class="score-desc" data-score="0" aria-pressed="true"><strong>0:</strong> No access to company data</button>
+                    <button type="button" class="score-desc" data-score="1" aria-pressed="false"><strong>1:</strong> Internal business data (non-sensitive); no PII</button>
+                    <button type="button" class="score-desc" data-score="2" aria-pressed="false"><strong>2:</strong> PII, customer data, or contractually confidential data</button>
+                    <button type="button" class="score-desc" data-score="3" aria-pressed="false"><strong>3:</strong> Regulated data (HIPAA, GDPR, financial), trade secrets, source code</button>
                 </div>
+                <button type="button" class="show-all-levels" aria-expanded="false">Show all levels</button>
+                <label class="note-label" for="note-dataSensitivity">Justification</label>
+                <textarea id="note-dataSensitivity" class="dim-note" data-dim="dataSensitivity" rows="2" placeholder="What data do they touch? Any PII, PHI, PCI or regulated data? Where is it stored?"></textarea>
             </div>
 
             <div class="dimension-card" data-dimension="physicalSafety">
                 <div class="dimension-header">
-                    <h3>3. Physical Safety & Injury Exposure</h3>
-                    <span class="dimension-score" id="physicalSafetyScore">0</span>
+                    <h3 id="physicalSafetyLabel">3. Physical Safety &amp; Injury Exposure</h3>
+                    <span class="dimension-score" id="physicalSafetyScore" aria-hidden="true">0</span>
                 </div>
-                <p class="dimension-desc">Risk of physical harm arising from vendor activities</p>
+                <p class="dimension-desc" id="physicalSafetyDesc">Risk of physical harm arising from vendor activities</p>
                 <div class="slider-container">
-                    <input type="range" min="0" max="3" value="0" class="slider" id="physicalSafety">
-                    <div class="slider-labels">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="physicalSafety" aria-labelledby="physicalSafetyLabel" aria-describedby="physicalSafetyDesc">
+                    <div class="slider-labels" aria-hidden="true">
                         <span>0</span><span>1</span><span>2</span><span>3</span>
                     </div>
                 </div>
                 <div class="score-descriptions">
-                    <div class="score-desc" data-score="0"><strong>0:</strong> Remote/virtual only; no physical presence</div>
-                    <div class="score-desc" data-score="1"><strong>1:</strong> On-site in office environment; standard hazards</div>
-                    <div class="score-desc" data-score="2"><strong>2:</strong> Equipment, vehicles, or moderate physical risk</div>
-                    <div class="score-desc" data-score="3"><strong>3:</strong> High-risk: construction, electrical, heights, confined spaces</div>
+                    <button type="button" class="score-desc" data-score="0" aria-pressed="true"><strong>0:</strong> Remote/virtual only; no physical presence</button>
+                    <button type="button" class="score-desc" data-score="1" aria-pressed="false"><strong>1:</strong> On-site in office environment; standard hazards</button>
+                    <button type="button" class="score-desc" data-score="2" aria-pressed="false"><strong>2:</strong> Equipment, vehicles, or moderate physical risk</button>
+                    <button type="button" class="score-desc" data-score="3" aria-pressed="false"><strong>3:</strong> High-risk: construction, electrical, heights, confined spaces</button>
                 </div>
+                <button type="button" class="show-all-levels" aria-expanded="false">Show all levels</button>
+                <label class="note-label" for="note-physicalSafety">Justification</label>
+                <textarea id="note-physicalSafety" class="dim-note" data-dim="physicalSafety" rows="2" placeholder="Where do they work? Heights, electrical, heavy equipment, vehicles?"></textarea>
             </div>
 
             <div class="dimension-card" data-dimension="siteAccess">
                 <div class="dimension-header">
-                    <h3>4. Site & Security Access</h3>
-                    <span class="dimension-score" id="siteAccessScore">0</span>
+                    <h3 id="siteAccessLabel">4. Site &amp; Security Access</h3>
+                    <span class="dimension-score" id="siteAccessScore" aria-hidden="true">0</span>
                 </div>
-                <p class="dimension-desc">Risk from vendor access to physical facilities or IT systems</p>
+                <p class="dimension-desc" id="siteAccessDesc">Risk from vendor access to physical facilities or IT systems</p>
                 <div class="slider-container">
-                    <input type="range" min="0" max="3" value="0" class="slider" id="siteAccess">
-                    <div class="slider-labels">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="siteAccess" aria-labelledby="siteAccessLabel" aria-describedby="siteAccessDesc">
+                    <div class="slider-labels" aria-hidden="true">
                         <span>0</span><span>1</span><span>2</span><span>3</span>
                     </div>
                 </div>
                 <div class="score-descriptions">
-                    <div class="score-desc" data-score="0"><strong>0:</strong> No facility or system access</div>
-                    <div class="score-desc" data-score="1"><strong>1:</strong> Escorted facility access; read-only or no IT access</div>
-                    <div class="score-desc" data-score="2"><strong>2:</strong> Unescorted access; badge issued; non-production IT</div>
-                    <div class="score-desc" data-score="3"><strong>3:</strong> Data center, secure areas, or production admin access</div>
+                    <button type="button" class="score-desc" data-score="0" aria-pressed="true"><strong>0:</strong> No facility or system access</button>
+                    <button type="button" class="score-desc" data-score="1" aria-pressed="false"><strong>1:</strong> Escorted facility access; read-only or no IT access</button>
+                    <button type="button" class="score-desc" data-score="2" aria-pressed="false"><strong>2:</strong> Unescorted access; badge issued; non-production IT</button>
+                    <button type="button" class="score-desc" data-score="3" aria-pressed="false"><strong>3:</strong> Data center, secure areas, or production admin access</button>
                 </div>
+                <button type="button" class="show-all-levels" aria-expanded="false">Show all levels</button>
+                <label class="note-label" for="note-siteAccess">Justification</label>
+                <textarea id="note-siteAccess" class="dim-note" data-dim="siteAccess" rows="2" placeholder="Badge access? Escorted? Which systems and what privilege level?"></textarea>
             </div>
 
             <div class="dimension-card" data-dimension="businessContinuity">
                 <div class="dimension-header">
-                    <h3>5. Business Continuity Impact</h3>
-                    <span class="dimension-score" id="businessContinuityScore">0</span>
+                    <h3 id="businessContinuityLabel">5. Business Continuity Impact</h3>
+                    <span class="dimension-score" id="businessContinuityScore" aria-hidden="true">0</span>
                 </div>
-                <p class="dimension-desc">Risk that vendor failure would disrupt critical operations</p>
+                <p class="dimension-desc" id="businessContinuityDesc">Risk that vendor failure would disrupt critical operations</p>
                 <div class="slider-container">
-                    <input type="range" min="0" max="3" value="0" class="slider" id="businessContinuity">
-                    <div class="slider-labels">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="businessContinuity" aria-labelledby="businessContinuityLabel" aria-describedby="businessContinuityDesc">
+                    <div class="slider-labels" aria-hidden="true">
                         <span>0</span><span>1</span><span>2</span><span>3</span>
                     </div>
                 </div>
                 <div class="score-descriptions">
-                    <div class="score-desc" data-score="0"><strong>0:</strong> Easily replaceable; commoditized; no dependency</div>
-                    <div class="score-desc" data-score="1"><strong>1:</strong> Minor inconvenience; 2+ alternatives available</div>
-                    <div class="score-desc" data-score="2"><strong>2:</strong> Moderate switching cost; 30-90 day transition</div>
-                    <div class="score-desc" data-score="3"><strong>3:</strong> Single point of failure; >90 day transition; critical to revenue</div>
+                    <button type="button" class="score-desc" data-score="0" aria-pressed="true"><strong>0:</strong> Easily replaceable; commoditized; no dependency</button>
+                    <button type="button" class="score-desc" data-score="1" aria-pressed="false"><strong>1:</strong> Minor inconvenience; 2+ alternatives available</button>
+                    <button type="button" class="score-desc" data-score="2" aria-pressed="false"><strong>2:</strong> Moderate switching cost; 30&ndash;90 day transition</button>
+                    <button type="button" class="score-desc" data-score="3" aria-pressed="false"><strong>3:</strong> Single point of failure; &gt;90 day transition; critical to revenue</button>
                 </div>
+                <button type="button" class="show-all-levels" aria-expanded="false">Show all levels</button>
+                <label class="note-label" for="note-businessContinuity">Justification</label>
+                <textarea id="note-businessContinuity" class="dim-note" data-dim="businessContinuity" rows="2" placeholder="Alternatives? Time to switch? Impact if they fail tomorrow?"></textarea>
             </div>
 
             <div class="dimension-card" data-dimension="aiMlRisk">
                 <div class="dimension-header">
-                    <h3>6. AI/ML Model Risk</h3>
-                    <span class="dimension-score" id="aiMlRiskScore">0</span>
+                    <h3 id="aiMlRiskLabel">6. AI/ML Model Risk</h3>
+                    <span class="dimension-score" id="aiMlRiskScore" aria-hidden="true">0</span>
                 </div>
-                <p class="dimension-desc">Risk from vendor use of AI/ML in delivered services</p>
+                <p class="dimension-desc" id="aiMlRiskDesc">Risk from vendor use of AI/ML in delivered services</p>
                 <div class="slider-container">
-                    <input type="range" min="0" max="3" value="0" class="slider" id="aiMlRisk">
-                    <div class="slider-labels">
+                    <input type="range" min="0" max="3" value="0" class="slider" id="aiMlRisk" aria-labelledby="aiMlRiskLabel" aria-describedby="aiMlRiskDesc">
+                    <div class="slider-labels" aria-hidden="true">
                         <span>0</span><span>1</span><span>2</span><span>3</span>
                     </div>
                 </div>
                 <div class="score-descriptions">
-                    <div class="score-desc" data-score="0"><strong>0:</strong> No AI/ML components</div>
-                    <div class="score-desc" data-score="1"><strong>1:</strong> Embedded AI; no customization; no training on your data</div>
-                    <div class="score-desc" data-score="2"><strong>2:</strong> Custom/fine-tuned models; influences decisions</div>
-                    <div class="score-desc" data-score="3"><strong>3:</strong> Trained on your data; affects customers/employees; IP concerns</div>
+                    <button type="button" class="score-desc" data-score="0" aria-pressed="true"><strong>0:</strong> No AI/ML components</button>
+                    <button type="button" class="score-desc" data-score="1" aria-pressed="false"><strong>1:</strong> Embedded AI; no customization; no training on your data</button>
+                    <button type="button" class="score-desc" data-score="2" aria-pressed="false"><strong>2:</strong> Custom/fine-tuned models; influences decisions</button>
+                    <button type="button" class="score-desc" data-score="3" aria-pressed="false"><strong>3:</strong> Trained on your data; affects customers/employees; IP concerns</button>
                 </div>
+                <button type="button" class="show-all-levels" aria-expanded="false">Show all levels</button>
+                <label class="note-label" for="note-aiMlRisk">Justification</label>
+                <textarea id="note-aiMlRisk" class="dim-note" data-dim="aiMlRisk" rows="2" placeholder="Is AI/ML involved? Trained on our data? What decisions does it influence?"></textarea>
             </div>
         </section>
 
         <!-- Required Reviews -->
         <section class="results-section">
             <h2>Required Reviews</h2>
+            <p id="reviewSummary" class="review-summary"></p>
             <div class="reviews-grid" id="reviewsGrid">
                 <div class="review-item" data-review="procurement">
-                    <span class="review-icon">&#10003;</span>
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
                     <span class="review-name">Procurement</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
                 </div>
                 <div class="review-item inactive" data-review="security">
-                    <span class="review-icon">&#10003;</span>
-                    <span class="review-name">Security Assessment</span>
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">Security Assessment (InfoSec)</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
                 </div>
                 <div class="review-item inactive" data-review="legal">
-                    <span class="review-icon">&#10003;</span>
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
                     <span class="review-name">Legal Review</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
                 </div>
                 <div class="review-item inactive" data-review="privacy">
-                    <span class="review-icon">&#10003;</span>
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
                     <span class="review-name">Privacy/DPO</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
+                </div>
+                <div class="review-item inactive" data-review="ehs">
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">EHS (Environmental Health &amp; Safety)</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
+                </div>
+                <div class="review-item inactive" data-review="finance">
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">Finance (vendor financial health)</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
+                </div>
+                <div class="review-item inactive" data-review="risk">
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">Risk/Compliance (BCP review + monitoring)</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
+                </div>
+                <div class="review-item inactive" data-review="aiGov">
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">AI Governance</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
+                </div>
+                <div class="review-item inactive" data-review="employment">
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">Employment Counsel</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
                 </div>
                 <div class="review-item inactive" data-review="executive">
-                    <span class="review-icon">&#10003;</span>
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
                     <span class="review-name">Executive Sponsor</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
                 </div>
                 <div class="review-item inactive" data-review="csuite">
-                    <span class="review-icon">&#10003;</span>
-                    <span class="review-name">C-Suite Approval</span>
+                    <span class="review-icon" aria-hidden="true">&#10003;</span>
+                    <span class="review-name">C-Suite Approval (+ Board notification if applicable)</span>
+                    <span class="review-why"></span>
+                    <span class="review-state sr-only"></span>
                 </div>
-            </div>
-
-            <!-- Triggered Reviews -->
-            <div class="triggered-reviews" id="triggeredReviews" style="display: none;">
-                <h3>Specialist Reviews Triggered</h3>
-                <div id="triggeredReviewsList"></div>
             </div>
         </section>
 
@@ -211,67 +395,154 @@
             <h2>Required Contract Clauses</h2>
             <div class="clauses-container">
                 <div class="clause-group" id="standardClauses">
-                    <h3>Standard Terms <span class="clause-badge">All Vendors</span></h3>
+                    <h3>Standard Terms <span class="clause-badge"><span class="sr-only">(</span>All vendors<span class="sr-only">)</span></span> <span class="clause-count"></span></h3>
                     <ul>
-                        <li>Confidentiality</li>
-                        <li>Data Return/Destruction</li>
-                        <li>Insurance Requirements</li>
-                        <li>Compliance with Laws</li>
-                        <li>Basic Indemnification</li>
+                        <li data-clause="confidentiality">Confidentiality <span class="why"></span></li>
+                        <li data-clause="dataReturn">Data Return/Destruction <span class="why"></span></li>
+                        <li data-clause="insurance">Insurance Requirements <span class="why"></span></li>
+                        <li data-clause="compliance">Compliance with Laws <span class="why"></span></li>
+                        <li data-clause="indemnification">Basic Indemnification <span class="why"></span></li>
                     </ul>
                 </div>
 
                 <div class="clause-group inactive" id="enhancedClauses">
-                    <h3>Enhanced Terms <span class="clause-badge">Score 6+</span></h3>
+                    <h3>Enhanced Terms <span class="clause-badge"><span class="sr-only">(</span>Score 6+ or any dimension = 3<span class="sr-only">)</span></span> <span class="clause-count"></span></h3>
                     <ul>
-                        <li>Information Security Requirements</li>
-                        <li>Audit Rights</li>
-                        <li>Subcontractor Flow-Down</li>
-                        <li>Background Check Requirements</li>
-                        <li>72-Hour Breach Notification</li>
+                        <li data-clause="security">Information Security Requirements <span class="why"></span></li>
+                        <li data-clause="auditRights">Audit Rights <span class="why"></span></li>
+                        <li data-clause="subcontractor">Subcontractor Flow-Down <span class="why"></span></li>
+                        <li data-clause="backgroundChecks">Background Check Requirements <span class="why"></span></li>
+                        <li data-clause="breachNotification">72-Hour Breach Notification <span class="why"></span></li>
                     </ul>
                 </div>
 
                 <div class="clause-group inactive" id="highRiskClauses">
-                    <h3>High-Risk Terms <span class="clause-badge">Score 11+</span></h3>
+                    <h3>High-Risk Terms <span class="clause-badge"><span class="sr-only">(</span>Score 11+ (single clauses also triggered by a dimension = 3)<span class="sr-only">)</span></span> <span class="clause-count"></span></h3>
                     <ul>
-                        <li>Data Processing Agreement</li>
-                        <li>Business Continuity Plan</li>
-                        <li>Termination for Convenience</li>
-                        <li>Step-In Rights</li>
-                        <li>Source Code Escrow</li>
-                        <li>Financial Covenants</li>
+                        <li data-clause="dpa">Data Processing Agreement <span class="why"></span></li>
+                        <li data-clause="bcp">Business Continuity Plan <span class="why"></span></li>
+                        <li data-clause="terminationConvenience">Termination for Convenience (exit/transition plan) <span class="why"></span></li>
+                        <li data-clause="stepIn">Step-In Rights <span class="why"></span></li>
+                        <li data-clause="escrow">Source Code Escrow <span class="why"></span></li>
+                        <li data-clause="financialCovenants">Financial Covenants <span class="why"></span></li>
                     </ul>
                 </div>
 
                 <div class="clause-group inactive" id="aiClauses">
-                    <h3>AI/ML Terms <span class="clause-badge">AI Score 2+</span></h3>
+                    <h3>AI/ML Terms <span class="clause-badge"><span class="sr-only">(</span>AI/ML Risk &#8805; 2<span class="sr-only">)</span></span> <span class="clause-count"></span></h3>
                     <ul>
-                        <li>Model Documentation</li>
-                        <li>Training Data Restrictions</li>
-                        <li>Output Ownership</li>
-                        <li>Transparency & Explainability</li>
-                        <li>Human Oversight Mechanisms</li>
-                        <li>30-Day Model Update Notification</li>
-                        <li>Bias & Fairness Testing</li>
-                        <li>AI Incident Response</li>
+                        <li data-clause="modelDocs">Model Documentation <span class="why"></span></li>
+                        <li data-clause="trainingData">Training Data Restrictions <span class="why"></span></li>
+                        <li data-clause="outputOwnership">Output Ownership <span class="why"></span></li>
+                        <li data-clause="transparency">Transparency &amp; Explainability <span class="why"></span></li>
+                        <li data-clause="humanOversight">Human Oversight Mechanisms <span class="why"></span></li>
+                        <li data-clause="modelUpdates">30-Day Model Update Notification <span class="why"></span></li>
+                        <li data-clause="biasTesting">Bias &amp; Fairness Testing <span class="why"></span></li>
+                        <li data-clause="aiIncident">AI Incident Response <span class="why"></span></li>
+                        <li data-clause="prohibitedUses">Prohibited Uses <span class="why"></span></li>
                     </ul>
+                    <p class="clause-advisory" id="aiPairingNote" hidden>The clause selection matrix pairs AI/ML terms with Enhanced terms (Information Security, Audit Rights, Breach Notification). Consider adding them even though the score is below 6. <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/clauses/contract_clauses.md#clause-selection-matrix" target="_blank" rel="noopener">Clause selection matrix<span class="sr-only"> (opens in new tab)</span></a></p>
                 </div>
             </div>
+        </section>
+
+        <!-- Regulatory checkpoints -->
+        <section class="results-section" id="regHints" aria-labelledby="regHintsHeading" hidden>
+            <h2 id="regHintsHeading">Regulatory checkpoints</h2>
+            <p class="reg-intro">The score alone cannot confirm jurisdiction &mdash; answer each question and see the linked guide section. Not legal advice.</p>
+            <ul id="regHintList"></ul>
         </section>
 
         <!-- Timeline -->
         <section class="results-section timeline-section">
             <h2>Expected Timeline</h2>
             <div class="timeline-display" id="timelineDisplay">
-                <span class="timeline-value">1-2 weeks</span>
+                <span class="timeline-value">1&ndash;2 weeks</span>
             </div>
+            <h3 class="next-steps-heading">Next steps</h3>
+            <ol id="nextSteps" class="next-steps"></ol>
+            <p id="monitoring" class="monitoring"></p>
         </section>
 
+        <!-- How the result was calculated -->
+        <details id="rulesUsed" class="rules-used">
+            <summary>How this result was calculated</summary>
+            <div id="rulesUsedBody"></div>
+        </details>
+
         <!-- Actions -->
-        <section class="actions">
-            <button class="btn btn-reset" id="resetBtn">Reset All</button>
-            <button class="btn btn-print" onclick="window.print()">Print Assessment</button>
+        <section class="actions-section">
+            <div class="actions">
+                <label for="presetSelect" class="sr-only">Load an example</label>
+                <select id="presetSelect" class="btn btn-select">
+                    <option value="">Load an example&hellip;</option>
+                </select>
+                <button type="button" class="btn" id="copyLinkBtn">Copy link</button>
+                <button type="button" class="btn" id="copyMdBtn">Copy Markdown</button>
+                <button type="button" class="btn" id="downloadMdBtn">Download .md</button>
+                <button type="button" class="btn" id="downloadJsonBtn">Download JSON</button>
+                <button type="button" class="btn" id="importJsonBtn">Import JSON</button>
+                <button type="button" class="btn btn-print" id="printBtn">Print Assessment</button>
+                <button type="button" class="btn btn-reset" id="resetBtn">Reset All</button>
+            </div>
+            <input type="file" id="importJsonInput" accept=".json,application/json" hidden>
+            <p class="action-status">
+                <a id="presetSource" class="preset-source" hidden target="_blank" rel="noopener">View example source<span class="sr-only"> (opens in new tab)</span></a>
+                <span id="copyStatus" role="status" class="copy-status" hidden></span>
+                <span id="linkNotice" class="copy-status" hidden>Link omits notes &mdash; use Export</span>
+            </p>
+            <p class="privacy-note">The link encodes the assessment in the URL fragment; nothing is sent to a server.</p>
+        </section>
+
+        <!-- About the framework + documentation hub -->
+        <section class="results-section about-section" id="about" aria-labelledby="aboutHeading">
+            <h2 id="aboutHeading">About this framework</h2>
+            <p>The Vendor Risk Assessment Framework scores any third-party engagement across six dimensions &mdash; co-employment, data sensitivity &amp; privacy, physical safety, site &amp; security access, business continuity and AI/ML model risk &mdash; each rated 0&ndash;3 for a total of 0&ndash;18. The total maps to four risk tiers: Standard (0&ndash;5), Enhanced (6&ndash;10), High (11&ndash;15) and Critical (16&ndash;18), and any single dimension scored 3 automatically adds a specialist review and the Enhanced contract clause set.</p>
+            <p>It is built for procurement, legal, security, privacy and GRC teams that need consistent, defensible vendor decisions without a heavyweight platform, and it is aligned with NIST CSF 2.0, ISO/IEC 27001:2022, NIST AI RMF 1.0 and common GDPR, HIPAA, CCPA, SOX and EU AI Act vendor-oversight expectations.</p>
+            <h3>Documentation</h3>
+            <nav aria-label="Framework documentation">
+                <ul class="doc-links">
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/risk_rubric.md">Full scoring rubric (all six dimensions)</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/decision_tree.md">Review pathway decision tree</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/clauses/contract_clauses.md">Tiered contract clause library</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/templates/blank_assessment.md">Blank assessment template</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/templates/intake_questionnaire.md">Vendor intake questionnaire</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/calculator_guide.md">How to use this calculator</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/quick_reference.md">One-page quick reference card</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/adoption_guide.md">Adoption guide: rolling out the framework</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/raci_matrix.md">RACI matrix</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/jurisdiction_considerations.md">Jurisdiction guide: EU AI Act, GDPR, CCPA, HIPAA, SOX, GLBA, DORA</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/executive_summary.md">Executive summary for leadership</a></li>
+                    <li><a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/faq.md">Frequently asked questions</a></li>
+                    <li>Worked examples: <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/examples/filled_example.md">AI analytics vendor</a>, <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/examples/staffing_agency.md">staffing agency</a>, <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/examples/low_risk_saas.md">low-risk SaaS</a>, <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/examples/construction_vendor.md">construction vendor</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- Approval chain (print only, from templates/blank_assessment.md) -->
+        <section class="print-only approval-chain">
+            <h2>Approval Chain</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Role</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Signature</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Requestor</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">InfoSec</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">Privacy</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">Legal</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">EHS</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">Finance</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">AI Governance</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">Executive Sponsor</th><td></td><td></td><td></td></tr>
+                    <tr><th scope="row">Procurement</th><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
         </section>
     </main>
 
@@ -279,15 +550,19 @@
         <div class="container">
             <p>
                 <strong>Vendor Risk Assessment Framework</strong> &mdash;
-                <a href="https://github.com/delschlangen/vendor-risk-rubric" target="_blank" rel="noopener">View full documentation on GitHub</a>
+                <a href="https://github.com/delschlangen/vendor-risk-rubric" target="_blank" rel="noopener">View the vendor risk framework on GitHub<span class="sr-only"> (opens in new tab)</span></a>
             </p>
-            <p class="footer-links">
-                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/risk_rubric.md">Full Rubric</a> &bull;
-                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/clauses/contract_clauses.md">Contract Clauses</a> &bull;
-                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/quick_reference.md">Quick Reference</a> &bull;
-                <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/templates/blank_assessment.md">Assessment Template</a>
-            </p>
-            <p class="copyright">MIT License &bull; Built by Del Schlangen</p>
+            <nav aria-label="Framework documentation links">
+                <p class="footer-links">
+                    <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/rubric/risk_rubric.md">Full Rubric</a> &bull;
+                    <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/clauses/contract_clauses.md">Contract Clauses</a> &bull;
+                    <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/docs/quick_reference.md">Quick Reference</a> &bull;
+                    <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/templates/blank_assessment.md">Assessment Template</a> &bull;
+                    <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/CHANGELOG.md"><span class="fw-version">v1.1.0</span> (<span class="fw-released">2026-09-15</span>)</a> &bull;
+                    <a href="https://github.com/delschlangen/vendor-risk-rubric/blob/main/CITATION.cff">Cite</a>
+                </p>
+            </nav>
+            <p class="copyright">MIT License &bull; Built by Del Schlangen &bull; Framework <span class="fw-version">v1.1.0</span> &bull; <time datetime="2026-09-15">Updated September 2026</time></p>
         </div>
     </footer>
 

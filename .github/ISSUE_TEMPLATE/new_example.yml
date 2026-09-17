@@ -1,0 +1,94 @@
+name: Propose a new example
+description: Propose a worked vendor assessment example for the examples/ folder.
+title: "[Example]: "
+labels:
+  - example
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Examples are fictional worked assessments. Score all six dimensions 0–3 and
+        justify every score. Tiers: Standard 0–5, Enhanced 6–10, High 11–15, Critical 16–18.
+        Any single dimension = 3 adds the specialist review and the Enhanced clause set
+        without changing the tier.
+  - type: input
+    id: vendor-type
+    attributes:
+      label: Vendor type
+      placeholder: e.g. Managed print services, Payroll processor, Facilities cleaning
+    validations:
+      required: true
+  - type: dropdown
+    id: industry
+    attributes:
+      label: Industry
+      options:
+        - Technology / SaaS
+        - Professional services
+        - Staffing / labor
+        - Construction / facilities
+        - Healthcare
+        - Financial services
+        - Manufacturing / logistics
+        - Marketing / media
+        - Other
+  - type: dropdown
+    id: score-coemployment
+    attributes:
+      label: Co-Employment score
+      options: ["0", "1", "2", "3"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-data
+    attributes:
+      label: Data Sensitivity & Privacy score
+      options: ["0", "1", "2", "3"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-safety
+    attributes:
+      label: Physical Safety score
+      options: ["0", "1", "2", "3"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-access
+    attributes:
+      label: Site & Security Access score
+      options: ["0", "1", "2", "3"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-continuity
+    attributes:
+      label: Business Continuity score
+      options: ["0", "1", "2", "3"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-aiml
+    attributes:
+      label: AI/ML Risk score
+      options: ["0", "1", "2", "3"]
+    validations:
+      required: true
+  - type: textarea
+    id: justifications
+    attributes:
+      label: Justification per score
+      description: One short paragraph per dimension explaining the score.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected tier, required reviews and clause sets
+      description: Compute these from the rubric or verify with the calculator.
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Why this adds coverage the four existing examples lack
+      description: What scenario does this illustrate that the AI analytics vendor, staffing agency, low-risk SaaS, and construction vendor examples do not?

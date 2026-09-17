@@ -1,6 +1,8 @@
 # Vendor Risk Quick Reference Card
 
-*Print this one-pager for rapid vendor assessments*
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
+*Print this one-pager — or use the calculator at https://delschlangen.github.io/vendor-risk-rubric/*
 
 ---
 
@@ -24,13 +26,13 @@
 | **0–5** | Standard | Procurement review only |
 | **6–10** | Enhanced | + Security + Legal |
 | **11–15** | High | + Executive sponsor + Full assessment |
-| **16–18** | Critical | + C-suite + Board + Quarterly reviews |
+| **16–18** | Critical | + C-suite + Board notification; quarterly reviews |
 
 ---
 
 ## Automatic Escalation Triggers
 
-**Any single dimension = 3:**
+**Any dimension = 3 → specialist review + Enhanced clause set (tier unchanged):**
 
 | If... | Then require... |
 |-------|-----------------|
@@ -38,7 +40,7 @@
 | Data Sensitivity = 3 | Privacy/DPO |
 | Physical Safety = 3 | EHS |
 | Site/Security = 3 | InfoSec |
-| Business Continuity = 3 | Finance |
+| Business Continuity = 3 | Finance (Procurement consulted) |
 | AI/ML Risk = 3 | AI Governance |
 
 ---
@@ -78,6 +80,8 @@
 7. Execute contract
 ```
 
+Steps 1–5 are automated by the calculator, which also exports the filled assessment template.
+
 ---
 
 ## Key Questions to Ask
@@ -96,4 +100,6 @@
 
 ---
 
-*Full rubric: `rubric/risk_rubric.md` | Template: `templates/blank_assessment.md`*
+[Full rubric](../rubric/risk_rubric.md) · [Decision tree](../rubric/decision_tree.md) · [Clause library](../clauses/contract_clauses.md) · [Assessment template](../templates/blank_assessment.md) · [Calculator guide](calculator_guide.md) · Calculator: https://delschlangen.github.io/vendor-risk-rubric/
+
+*Framework v1.1.0 · Last reviewed: 2026-09-15 · Next review due: 2027-09 · Found an error? [Open an issue](https://github.com/delschlangen/vendor-risk-rubric/issues)*

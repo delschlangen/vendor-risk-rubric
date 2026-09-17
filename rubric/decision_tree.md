@@ -1,5 +1,7 @@
 # Vendor Risk Assessment Decision Tree
 
+*Last reviewed: 2026-09-15 · Framework v1.1.0*
+
 A step-by-step workflow for determining required vendor review processes based on risk scoring.
 
 ---
@@ -19,38 +21,42 @@ A step-by-step workflow for determining required vendor review processes based o
                                │
                                ▼
                     ┌─────────────────────┐
-                    │ Any dimension = 3?  │
+                    │Calculate Total Score│
                     └──────────┬──────────┘
                                │
-              ┌────────────────┴────────────────┐
-              │ YES                             │ NO
-              ▼                                 ▼
-    ┌──────────────────┐              ┌─────────────────┐
-    │ Trigger Special  │              │ Calculate Total │
-    │ Review (see §2)  │              │     Score       │
-    └────────┬─────────┘              └────────┬────────┘
-             │                                  │
-             │         ┌────────────────────────┼────────────────────────┐
-             │         │                        │                        │
-             │         ▼                        ▼                        ▼
-             │   ┌───────────┐          ┌─────────────┐         ┌──────────────┐
-             │   │  0–5 pts  │          │  6–10 pts   │         │  11–18 pts   │
-             │   │ STANDARD  │          │  ENHANCED   │         │ HIGH/CRITICAL│
-             │   └─────┬─────┘          └──────┬──────┘         └──────┬───────┘
-             │         │                       │                       │
-             │         ▼                       ▼                       ▼
-             │   ┌───────────┐          ┌─────────────┐         ┌──────────────┐
-             │   │Procurement│          │+ Security   │         │+ Exec Sponsor│
-             │   │ Review    │          │+ Legal      │         │+ Full Assess │
-             │   └───────────┘          └─────────────┘         └──────────────┘
-             │                                                         │
-             └─────────────────────────────────────────────────────────┘
-                                       │
-                                       ▼
-                            ┌─────────────────────┐
-                            │  Contract Execution │
-                            │  + Required Clauses │
-                            └─────────────────────┘
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+        ┌───────────┐   ┌─────────────┐  ┌──────────────┐
+        │  0–5 pts  │   │  6–10 pts   │  │  11–18 pts   │
+        │ STANDARD  │   │  ENHANCED   │  │ HIGH/CRITICAL│
+        └─────┬─────┘   └──────┬──────┘  └──────┬───────┘
+              ▼                ▼                ▼
+        ┌───────────┐   ┌─────────────┐  ┌──────────────┐
+        │Procurement│   │+ Security   │  │+ Exec Sponsor│
+        │ Review    │   │+ Legal      │  │+ Full Assess │
+        └─────┬─────┘   └──────┬──────┘  └──────┬───────┘
+              │                │                │
+              └────────────────┼────────────────┘
+                               ▼
+                      ╱─────────────────╲
+                     ╱ Any dimension = 3?╲
+                     ╲                   ╱
+                      ╲────────┬────────╱
+                        YES    │    NO
+              ┌────────────────┤
+              ▼                │
+   ┌──────────────────────┐    │
+   │ Add Specialist Review│    │
+   │ (§4) + Enhanced      │    │
+   │ clause set           │    │
+   └──────────┬───────────┘    │
+              │                │
+              └───────┬────────┘
+                      ▼
+           ┌─────────────────────┐
+           │  Contract Execution │
+           │  + Required Clauses │
+           └─────────────────────┘
 ```
 
 ---
@@ -69,7 +75,7 @@ A step-by-step workflow for determining required vendor review processes based o
 
 **Timeline:** 1–2 weeks
 
-**Required clauses:** See `contract_clauses.md` § Standard Terms
+**Required clauses:** See [contract_clauses.md — Standard Terms](../clauses/contract_clauses.md)
 
 ---
 
@@ -90,7 +96,7 @@ A step-by-step workflow for determining required vendor review processes based o
 
 **Timeline:** 3–6 weeks
 
-**Required clauses:** See `contract_clauses.md` § Enhanced Terms
+**Required clauses:** See [contract_clauses.md — Enhanced Terms](../clauses/contract_clauses.md)
 
 ---
 
@@ -109,18 +115,19 @@ A step-by-step workflow for determining required vendor review processes based o
 | 7 | Risk | Business continuity plan review |
 | 8 | AI Gov | AI/ML risk review (if AI/ML Risk ≥ 2) |
 | 9 | Exec Sponsor | Sign-off on residual risk |
+| 9a | C-Suite | **Critical only (16–18):** C-suite approval; Board notification if applicable; assign dedicated risk owner |
 | 10 | Procurement | Execute contract |
 | 11 | Risk | Add to ongoing monitoring program |
 
 **Timeline:** 6–12 weeks
 
-**Required clauses:** See `contract_clauses.md` § High-Risk Terms
+**Required clauses:** See [contract_clauses.md — High-Risk Terms](../clauses/contract_clauses.md)
 
 ---
 
 ## §4: Special Trigger Reviews
 
-When any single dimension scores **3**, the following specialized reviews are required regardless of total score:
+When any single dimension scores **3**, the following specialized reviews are required regardless of total score. These reviews and clause requirements apply in addition to the tier pathway; they do not change the tier.
 
 ### Co-Employment Risk = 3
 
@@ -192,7 +199,7 @@ IF ai_ml_risk = 3:
 |-----------|----------------|-------------------|
 | Standard | Procurement review at renewal | None required |
 | Enhanced | Re-score rubric at renewal; Security re-assessment if scope changed | Annual security attestation |
-| High/Critical | Full re-assessment annually | Quarterly business review; continuous monitoring |
+| High/Critical | Full re-assessment annually | Quarterly business review; continuous monitoring; **Critical:** dedicated risk owner, quarterly reviews |
 
 ---
 
@@ -213,3 +220,4 @@ Exceptions to this process require:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12 | Initial release |
+| 1.1 | 2026-09 | Flowchart shows tier calculation and dimension = 3 triggers as parallel paths; added Critical-only step 9a; linked clause library |

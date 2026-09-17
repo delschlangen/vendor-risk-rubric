@@ -1,10 +1,12 @@
 # Vendor Risk Assessment: Low-Risk SaaS
 
+*Illustrative example — vendor, people and dates are fictional. Framework v1.1.0; reviewed 2026-09-15.*
+
 **Vendor Name:** Diagramify
 **Service:** Cloud-based diagramming and flowchart tool
 **Requestor:** Marketing
 **Department:** Marketing Operations
-**Assessment Date:** 2024-12-15
+**Assessment Date:** 2026-09-15
 **Assessor:** Risk & Compliance
 
 ---
@@ -34,7 +36,7 @@ Diagramify is a cloud-based diagramming tool (similar to Lucidchart/Miro) that t
 | Factor | Assessment |
 |--------|------------|
 | Data types accessed | Marketing strategies, process flowcharts, org charts |
-| PII involved? | Minimal — may include employee names in org charts |
+| PII involved? | No — org charts use role titles only; policy prohibits personal data in diagrams |
 | Regulated data? | None |
 | Trade secrets? | No — business processes, not proprietary IP |
 
@@ -119,6 +121,8 @@ Diagramify is a cloud-based diagramming tool (similar to Lucidchart/Miro) that t
 No additional reviews required for Standard tier.
 
 ### Required Contract Clauses
+
+All clauses in the applicable sets apply; engagement-specific emphasis or documented deviations are noted below.
 
 **Standard Terms Only:**
 - Confidentiality

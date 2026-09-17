@@ -1,10 +1,12 @@
 # Vendor Risk Assessment: Staffing Agency
 
+*Illustrative example — vendor, people and dates are fictional. Framework v1.1.0; reviewed 2026-09-15.*
+
 **Vendor Name:** TalentBridge Staffing Solutions
 **Service:** Contract software developers for product team augmentation
 **Requestor:** Engineering
 **Department:** Product Development
-**Assessment Date:** 2024-12-15
+**Assessment Date:** 2026-09-15
 **Assessor:** Risk & Compliance
 
 ---
@@ -120,13 +122,18 @@ TalentBridge provides contract software developers who will be embedded in our p
 
 | Review | Owner | Status |
 |--------|-------|--------|
+| Procurement review | Procurement | Pending |
 | Security assessment | InfoSec | Pending — triggered by Site/Security = 3 |
 | Legal contract review | Legal | Pending — High tier |
 | Privacy/DPO review | Privacy Team | Pending — triggered by Data Sensitivity = 3 |
 | Employment counsel | Employment Legal | Pending — triggered by Co-Employment = 3 |
+| Vendor financial health review | Finance | Pending — High tier |
+| Business continuity plan review | Risk/Compliance | Pending — High tier |
 | Executive sponsor | VP Engineering | Pending — High tier |
 
 ### Required Contract Clauses
+
+All clauses in the applicable sets apply; engagement-specific emphasis or documented deviations are noted below.
 
 **Standard Terms:**
 - Confidentiality
@@ -136,15 +143,19 @@ TalentBridge provides contract software developers who will be embedded in our p
 - Basic Indemnification
 
 **Enhanced Terms:**
-- Information Security Requirements
+- Security Requirements
 - Audit Rights
 - Subcontractor Flow-Down
 - Background Checks — *Critical for this engagement*
 - Breach Notification (72-hour)
 
 **High-Risk Terms:**
+- Data Processing Agreement — *triggered by Data Sensitivity = 3*
+- Business Continuity
 - Termination for Convenience
 - Financial Covenants
+- Step-In Rights — *N/A — staffing engagement (documented deviation)*
+- Source Code Escrow — *N/A — staffing engagement (documented deviation)*
 
 ### Additional Mitigations
 
@@ -179,6 +190,7 @@ Given the high co-employment score, implement the following structure:
 | Privacy | | Pending | |
 | Employment Counsel | | Pending | |
 | Legal | | Pending | |
+| Finance | | Pending | |
 | Executive Sponsor (VP+) | | Pending | |
 | Procurement | | Pending | |
 
